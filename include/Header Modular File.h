@@ -46,6 +46,8 @@
 #define errorMsg13 "\n\tError: Insufficient Resources!\n\n"
 #define errorMsg14 "\n\tError: Configuration File Not Found!\n\n"
 #define errorMsg15 "\n\tError: Unexpected End of File!\n\n"
+#define errorMsg16 "\n\tError: Memory Allocation Failed! Please check available resources.\n\n"
+#define errorMsg17 "\n\tError: Memory Reallocation Failed! Please check available resources.\n\n"
 // SUCCESS_MSG
 #define successMsg01 "\n\tObject Successfully Added !\n\n"
 #define successMsg02 "\n\tYou Have Been Logged Out Successfully.\n\n"
