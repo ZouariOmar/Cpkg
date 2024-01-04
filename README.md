@@ -1,10 +1,10 @@
 # C Functions Package
 
-A collection of useful C language functions for various purposes.
+A collection of useful C language functions And modular files for various purposes.
 
 ## Overview
 
-This repository contains a package of C functions that can be utilized in different C programming projects. The functions cover a range of functionalities and are designed to be reusable across various applications.
+This repository contains a package of C functions and modular files that can be utilized in different C programming projects. The functions cover a range of functionalities and are designed to be reusable across various applications.
 
 ## Functions Included
 
