@@ -66,10 +66,21 @@
 #define successMsg14 "\n\tFile Successfully Read!\n\n"
 #define successMsg15 "\n\tData Export Successful!\n\n"
                     /* STRUCT PROTOTYPE DECLARATION PART */
+typedef struct date {                                                                       // date struct
+    int dd;
+    int mm;
+    int yyyy;
+} date;
+typedef enum {                                                                              // bool test enum
+    false,
+    true
+}
 /*
 struct...
 */
                     /* FUNCTIONS PROTOTYPE DECLARATION PART */
+int menu()
+int is_validDate(date *dt);
 /*
 func...
 */
