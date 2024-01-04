@@ -6,6 +6,7 @@
                     /* INCLUDE PROTOTYPE DECLARATION PART */
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <string.h>
 #include <ctype.h>
 #include <windows.h>
@@ -68,14 +69,8 @@
 #define successMsg15 "\n\tData Export Successful!\n\n"
                     /* STRUCT PROTOTYPE DECLARATION PART */
 typedef struct date {                                                                       // date struct typedef
-    int dd;
-    int mm;
-    int yyyy;
+    int dd, mm, yyyy;
 } date;
-typedef enum {                                                                              // enum typedef
-    false,          // false = 0
-    true            // true = 1
-}
 /*
 struct...
 */
