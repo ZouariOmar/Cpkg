@@ -75,8 +75,8 @@ typedef struct date {                                                           
 struct...
 */
                     /* FUNCTIONS PROTOTYPE DECLARATION PART */
-int menu()
-int is_validDate(date *dt);
+int menu();                                                                                 // menu() int func
+bool is_validDate(date dt);                                                                 // is_validDate() bool func
 /*
 func...
 */
