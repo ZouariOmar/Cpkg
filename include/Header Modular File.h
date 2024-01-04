@@ -51,6 +51,7 @@
 #define errorMsg17 "\n\tError: Memory Reallocation Failed! Please check available resources.\n\n"
 #define errorMsg18 "\n\tError: Please Enter a Number Greater Than Zero !\n\n"
 #define errorMsg19 "\n\tError: Object Already Exist !\n\n"
+#define errorMsg20 "\n\tError: No Data Found !\n\n"
 // SUCCESS_MSG
 #define successMsg01 "\n\tObject Successfully Added !\n\n"
 #define successMsg02 "\n\tYou Have Been Logged Out Successfully.\n\n"
