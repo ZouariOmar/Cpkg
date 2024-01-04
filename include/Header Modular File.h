@@ -67,14 +67,14 @@
 #define successMsg14 "\n\tFile Successfully Read!\n\n"
 #define successMsg15 "\n\tData Export Successful!\n\n"
                     /* STRUCT PROTOTYPE DECLARATION PART */
-typedef struct date {                                                                       // date struct
+typedef struct date {                                                                       // date struct typedef
     int dd;
     int mm;
     int yyyy;
 } date;
-typedef enum {                                                                              // bool test enum
-    false,
-    true
+typedef enum {                                                                              // enum typedef
+    false,          // false = 0
+    true            // true = 1
 }
 /*
 struct...
