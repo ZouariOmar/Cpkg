@@ -79,9 +79,8 @@
 typedef struct Date {                                                               // Date typedef struct
     int day, month, year;
 } date;
-
                     /* FUNCTIONS PROTOTYPE DECLARATION PART */
 int menu();                                                                         // menu() int func
-bool is_validDate(date);                                                            // is_validDate() bool func
+bool isValidDate(date);                                                             // isValidDate() bool func
 void greaterThanZero(int*, char*);                                                  // greaterThanZero() void func
 #endif
