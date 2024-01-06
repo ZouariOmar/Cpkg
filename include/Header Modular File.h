@@ -67,16 +67,12 @@
 #define successMsg13 "\n\tConnection Established Successfully!\n\n"
 #define successMsg14 "\n\tFile Successfully Read!\n\n"
 #define successMsg15 "\n\tData Export Successful!\n\n"
+#define successMsg16 "\n\t-- S E E  Y O U  N E X T  T I M E ! --\n\n"
                     /* STRUCT PROTOTYPE DECLARATION PART */
-typedef struct date {                                                                       // date struct typedef
-    int dd, mm, yyyy;
-} date;
 /*
 struct...
 */
                     /* FUNCTIONS PROTOTYPE DECLARATION PART */
-int menu();                                                                                 // menu() int func
-bool is_validDate(date dt);                                                                 // is_validDate() bool func
 /*
 func...
 */

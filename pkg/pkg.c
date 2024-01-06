@@ -20,3 +20,10 @@ bool is_validDate(date dt) {
     if (dt.mm == 2 && (dt.yyyy % 4 == 0 && (dt.yyyy % 100 != 0 || dt.yyyy % 400 == 0))) daysInMonth[2] = 29;        // Check for February and Leap year check
     return (dt.dd <= daysInMonth[dt.mm]);
 }
+void greaterThanZero(int *x, char *msg) {
+    while (1) {
+        printf("%s%s%s", yellow, msg, def); scanf("%d", x);
+        if(*x > 0) break;
+        else printf("%s%s%s", red, errorMsg18, def);
+    }
+}
