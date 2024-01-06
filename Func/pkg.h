@@ -4,12 +4,12 @@
 #ifndef __PKG_H__
 #define __PKG_H__
                     /* INCLUDE PROTOTYPE DECLARATION PART */
-#include "import.h"
+#include "../Import/importAll.h"
                     /* STRUCT PROTOTYPE DECLARATION PART */
 typedef struct Date {                                                               // Date typedef struct
     int day, month, year;
 } date;
                     /* FUNCTIONS PROTOTYPE DECLARATION PART */
 bool isValidDate(date);                                                             // isValidDate() bool func
-void greaterThanZero(int*, char*);                                                  // greaterThanZero() void func
+void greaterThanZero(float*, char*);                                                  // greaterThanZero() void func
 #endif

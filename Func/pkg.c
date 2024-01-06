@@ -2,7 +2,7 @@
 // dd/mm/yyyy
 // Name Of Project Or Name The File
                     /* INCLUDE PROTOTYPE DECLARATION PART */
-#include "../Include/pkg.h"
+#include "../Func/pkg.h"
                     /* FUNCTIONS PROTOTYPE DEV PART */
 bool isValidDate(date dt) {
     int *daysInMonth = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -11,9 +11,9 @@ bool isValidDate(date dt) {
     return (dt.day <= daysInMonth[dt.month]);
 }
 /* ------------------------------------------------------------------------- */
-void greaterThanZero(int *x, char *msg) {
+void greaterThanZero(float *x, char *msg) {
     while (1) {
-        if(printf("%s%s%s", yellow, msg, def) && scanf("%d", x) && *x > 0) break;
+        if(printf("%s%s%s", yellow, msg, def) && scanf("%f", x) && *x > 0) break;
         printf("%s%s%s", red, errorMsg18, def);
     }
 }

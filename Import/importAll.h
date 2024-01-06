@@ -12,8 +12,8 @@
 #include <ctype.h>
 #include <windows.h>
 // C INCLUDE CUSTOMIZED
-#include "msg.h"
-#include "color.h"
-#include "print.h"
+#include "../Custom/msg.h"
+#include "../Custom/color.h"
+#include "../Func/print.h"
                     /* END OF INCLUDE PROTOTYPE DECLARATION PART */
 #endif
