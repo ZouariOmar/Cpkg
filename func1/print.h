@@ -1,6 +1,8 @@
 // by_zouari_omar_full_stack_c++_dev
 // dd/mm/yyyy
-// Name Of Project Or Name The File
+// by_zouari_omar_full_stack_c++_dev
+// dd/mm/yyyy
+// Path ::: pkg/func/print.h
 #ifndef __PRINT_H__
 #define __PRINT_H__
                     /* PRINT FUNCTIONS PROTOTYPE DECLARATION PART */
@@ -9,5 +11,5 @@
     int: printf("<int>\n", #x), \
     float: printf("<float>\n", #x), \
     default: printf("<Unknown>\n"))
-                    /* END OF PRINT FUNCTIONS PROTOTYPE DECLARATION PART  */
+/* ------------------------------------------------------------------------- */
 #endif
