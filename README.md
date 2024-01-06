@@ -1,25 +1,6 @@
 ## Functions Included
 
-1. **`menu()`**
-   - **Description:** This function displays a menu and reads the user's choice.
-   - **Usage:**
-     ```c
-     int choice = menu();
-     ```
-   - **Example:**
-     ```c
-     #include <stdio.h>
-     #include "c_functions_package/menu.h"
-
-     int main() {
-         int userChoice = menu();
-         printf("User chose option %d\n", userChoice);
-
-         return 0;
-     }
-     ```
-
-2. **`isValidDate(date dt)`**
+1. **`isValidDate(date dt)`**
    - **Description:** This function checks whether the given date is valid.
    - **Parameters:**
      - `date` (type `dt`): A `dt` structure representing a date.
@@ -51,7 +32,7 @@
      }
      ```
 
-3. **`greaterThanZero(int *x, char *msg)`**
+2. **`greaterThanZero(int *x, char *msg)`**
    - **Description:** This function prompts the user with a message until a positive integer is entered.
    - **Parameters:**
      - `x` (type `int*`): A pointer to an integer to store the user input.

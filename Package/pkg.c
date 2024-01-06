@@ -4,17 +4,6 @@
                     /* INCLUDE PROTOTYPE DECLARATION PART */
 #include "../Include/pkg.h"
                     /* FUNCTIONS PROTOTYPE DEV PART */
-int menu() {
-    int choice;
-    printf(
-        "%s\t-- N A M E  O F  A P P --\n"
-        "[1] Option 1.\n"
-        "[2] Option 2.\n"
-        "[3] Option 3.\n"
-        "[0] Exit Option.\n...%s", cyan, def); scanf("%d", &choice);
-        return choice;
-}
-/* ------------------------------------------------------------------------- */
 bool isValidDate(date dt) {
     int *daysInMonth = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     if (dt.day < 1 || dt.day > 31 || dt.month < 1 || dt.month > 12 || dt.year < 1980 || dt.year > 2024) return false;       // Basic checks for day, month, and year ranges
