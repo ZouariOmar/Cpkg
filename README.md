@@ -1,11 +1,3 @@
-# C Functions Package
-
-A collection of useful C language functions And modular files for various purposes.
-
-## Overview
-
-This repository contains a package of C functions and modular files that can be utilized in different C programming projects. The functions cover a range of functionalities and are designed to be reusable across various applications.
-
 ## Functions Included
 
 1. **`menu()`**
@@ -54,6 +46,30 @@ This repository contains a package of C functions and modular files that can be 
          } else {
              printf("The date is not valid.\n");
          }
+
+         return 0;
+     }
+     ```
+
+3. **`greaterThanZero(int *x, char *msg)`**
+   - **Description:** This function prompts the user with a message until a positive integer is entered.
+   - **Parameters:**
+     - `x` (type `int*`): A pointer to an integer to store the user input.
+     - `msg` (type `char*`): The message to display to the user.
+   - **Usage:**
+     ```c
+     int userInput;
+     greaterThanZero(&userInput, "Enter a positive integer: ");
+     ```
+   - **Example:**
+     ```c
+     #include <stdio.h>
+     #include "c_functions_package/user_input.h"
+
+     int main() {
+         int userInput;
+         greaterThanZero(&userInput, "Enter a positive integer: ");
+         printf("User entered: %d\n", userInput);
 
          return 0;
      }

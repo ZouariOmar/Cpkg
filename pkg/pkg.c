@@ -2,8 +2,7 @@
 // dd/mm/yyyy
 // Name Of Project Or Name The File
                     /* INCLUDE PROTOTYPE DECLARATION PART */
-#include "../include/Header Modular File.h"
-                    /* FUNCTIONS PROTOTYPE DECLARATION PART */
+#include "pkg.h"
 int menu() {
     int choice;
     printf(
@@ -14,16 +13,17 @@ int menu() {
         "[0] Exit Option.\n...%s", cyan, def); scanf("%d", &choice);
         return choice;
 }
+/* ------------------------------------------------------------------------- */
 bool is_validDate(date dt) {
     int daysInMonth[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    if (dt.dd < 1 || dt.dd > 31 || dt.mm < 1 || dt.mm > 12 || dt.yyyy < 1980 || dt.yyyy > 2024) return false;       // Basic checks for day, month, and year ranges
-    if (dt.mm == 2 && (dt.yyyy % 4 == 0 && (dt.yyyy % 100 != 0 || dt.yyyy % 400 == 0))) daysInMonth[2] = 29;        // Check for February and Leap year check
-    return (dt.dd <= daysInMonth[dt.mm]);
+    if (dt.day < 1 || dt.day > 31 || dt.month < 1 || dt.month > 12 || dt.year < 1980 || dt.year > 2024) return false;       // Basic checks for day, month, and year ranges
+    if (dt.month == 2 && (dt.year % 4 == 0 && (dt.year % 100 != 0 || dt.year % 400 == 0))) daysInMonth[2] = 29;             // Check for February and Leap year check
+    return (dt.day <= daysInMonth[dt.month]);
 }
+/* ------------------------------------------------------------------------- */
 void greaterThanZero(int *x, char *msg) {
     while (1) {
-        printf("%s%s%s", yellow, msg, def); scanf("%d", x);
-        if(*x > 0) break;
-        else printf("%s%s%s", red, errorMsg18, def);
+        if(printf("%s%s%s", yellow, msg, def) && scanf("%d", x) && *x > 0) break;
+        printf("%s%s%s", red, errorMsg18, def);
     }
 }
