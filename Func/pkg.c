@@ -16,4 +16,4 @@ void greaterThanZero(float *x, char *msg) {
         if(printf("%s%s%s", yellow, msg, def) && scanf("%f", x) && *x > 0) break;
         printf("%s%s%s", red, errorMsg18, def);
     }
-}
+} // testt
