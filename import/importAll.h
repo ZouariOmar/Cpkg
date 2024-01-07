@@ -1,6 +1,6 @@
 // by_zouari_omar_full_stack_c++_dev
 // dd/mm/yyyy
-// Name Of Project Or Name The File
+// Path ::: pkg/import/importAll.h
 #ifndef __IMPORT_H__
 #define __IMPORT_H__
                     /* INCLUDE PROTOTYPE DECLARATION PART */
@@ -12,8 +12,9 @@
 #include <ctype.h>
 #include <windows.h>
 // C INCLUDE CUSTOMIZED
-#include "../Custom/msg.h"
-#include "../Custom/color.h"
-#include "../Func/print.h"
+#include "../custom/msg.h"
+#include "../custom/color.h"
+#include "../func/print.h"
+#include "../func/inputV.h"
                     /* END OF INCLUDE PROTOTYPE DECLARATION PART */
 #endif

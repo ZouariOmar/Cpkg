@@ -1,6 +1,6 @@
 // by_zouari_omar_full_stack_c++_dev
 // dd/mm/yyyy
-// Name Of Project Or Name The File
+// Path ::: pkg/custom/msg.h
 #ifndef __MSG_H__
 #define __MSG_H__
                     /* MSG PROTOTYPE DECLARATION PART */

@@ -1,6 +1,6 @@
 // by_zouari_omar_full_stack_c++_dev
 // dd/mm/yyyy
-// Name Of Project Or Name The File
+// // Path ::: pkg/custom/color.h
 #ifndef __COLOR_H__
 #define __COLOR_H__
                     /* COLORS PROTOTYPE DECLARATION PART */

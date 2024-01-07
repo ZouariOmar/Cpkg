@@ -1,7 +1,5 @@
 // by_zouari_omar_full_stack_c++_dev
 // dd/mm/yyyy
-// by_zouari_omar_full_stack_c++_dev
-// dd/mm/yyyy
 // Path ::: pkg/func/print.h
 #ifndef __PRINT_H__
 #define __PRINT_H__
