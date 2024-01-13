@@ -22,19 +22,27 @@ Your project is organized into the following structure:
 - **pkg/import**: Contains the `importAll.h` header file.
 
 ```plaintext
-your_project/
-|-- pkg/
-|   |-- custom/
-|   |   |-- msg.h
-|   |   |-- color.h
-|   |-- func/
-|   |   |-- inputV.h
-|   |   |-- print.h
-|   |-- import/
-|       |-- importAll.h
+C Package
+│   C_Package.code-workspace
+│   LICENSE
+│   README.md
+│
+├───custom
+│       color.h
+│       msg.h
+│
+├───func
+│       inputV.h
+│       print.h
+│
+├───github
+│       .gitignore
+│
+└───import
+│      importAll.h
 ```
 ## How to Use
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/c-functions-package.git
+   git clone https://github.com/ZouariOmar/C_Package.git
