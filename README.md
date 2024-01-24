@@ -41,8 +41,10 @@ C Package
 └───import
 │      importAll.h
 ```
+
 ## How to Use
 
 1. **Clone the Repository:**
+
    ```bash
    git clone https://github.com/ZouariOmar/C_Package.git
