@@ -501,8 +501,13 @@ C:.
 ├───github
 │       .gitignore
 │
-└───import
-        importAll.h
+├───import
+│       importAll.h
+│
+└───res
+    ├───html
+    └───img
+            img.ico
 ```
 
 ## How to Use
