@@ -22,7 +22,7 @@ Your project is organized into the following structure:
 - **pkg/import**: Contains the `importAll.h` header file.
 
 ```plaintext
-C:.
+C_Package
 │   C_Package.code-workspace
 │   LICENSE
 │   README.md
