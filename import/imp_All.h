@@ -1,6 +1,6 @@
 // by_zouari_omar_full_stack_c++_dev
 // dd/mm/yyyy
-// Path ::: pkg/import/importAll.h
+// Path ::: pkg/import/imp_All.h
 #ifndef __IMPORT_H__
 #define __IMPORT_H__
                     /* INCLUDE PROTOTYPE DECLARATION PART */
