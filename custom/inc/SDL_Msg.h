@@ -1,10 +1,14 @@
-// by_zouari_omar_full_stack_c++_dev
-// dd/mm/yyyy
-// Path ::: pkg/custom/SDL_Msg.h
+/* -----------------------------------------------
+* @author:    by_zouari_omar_full_stack_java_dev
+* @date:      mm/dd/yyyy
+? @file_name: SDL_Msg.h
+----------------------------------------------- */
+
 #ifndef __SDL_MSG_H__
 #define __SDL_MSG_H__
-                    /* MSG PROTOTYPE DECLARATION PART */
-// SDL_ERROR_MSG
+
+//? ------------------------ MSG PROTOTYPE DECLARATION PART ------------------------
+//* SDL_ERROR_MSG
 #define SDL_ERRMSG00 "SDL initialization failed"
 #define SDL_ERRMSG01 "Window creation failed"
 #define SDL_ERRMSG02 "Texture loading failed"
@@ -26,7 +30,8 @@
 #define SDL_ERRMSG18 "Invalid username or password"
 #define SDL_ERRMSG19 "Division by zero"
 #define SDL_ERRMSG20 "Stack overflow"
-// SDL_SUCCESS_MSG
+
+//* SDL_SUCCESS_MSG
 #define SDL_SUCMSG00 "SDL initialized successfully"
 #define SDL_SUCMSG01 "Window created successfully"
 #define SDL_SUCMSG02 "Texture loaded successfully"
@@ -48,5 +53,5 @@
 #define SDL_SUCMSG18 "Login successful"
 #define SDL_SUCMSG19 "Division operation completed successfully"
 #define SDL_SUCMSG20 "Stack operation completed successfully"
-                    /* END OF MSG PROTOTYPE DEFINITION DECLARATION PART */
+
 #endif

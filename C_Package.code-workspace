@@ -9,8 +9,10 @@
 			"header modular file.h": "c"
 		},
 		"cSpell.words": [
+			"INPUTV",
 			"printt",
-			"stdbool"
+			"stdbool",
+			"SUCMSG"
 		]
 	}
 }

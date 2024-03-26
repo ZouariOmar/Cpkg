@@ -1,10 +1,14 @@
-// by_zouari_omar_full_stack_c++_dev
-// dd/mm/yyyy
-// Path ::: pkg/custom/msg.h
+/* -----------------------------------------------
+* @author:    by_zouari_omar_full_stack_java_dev
+* @date:      mm/dd/yyyy
+? @file_name: msg.h
+----------------------------------------------- */
+
 #ifndef __MSG_H__
 #define __MSG_H__
-                    /* MSG PROTOTYPE DECLARATION PART */
-// ERROR_MSG
+
+//? ------------------------ MSG PROTOTYPE DECLARATION PART ------------------------
+//* ERROR_MSG
 #define errorMsg01 "\n\tError: Invalid Option !\n\n"
 #define errorMsg02 "\n\tError: Out of Memory!\n\n"
 #define errorMsg03 "\n\tError: File Not Found!\n\n"
@@ -25,7 +29,8 @@
 #define errorMsg18 "\n\tError: Please Enter a Number Greater Than Zero !\n\n"
 #define errorMsg19 "\n\tError: Object Already Exist !\n\n"
 #define errorMsg20 "\n\tError: No Data Found !\n\n"
-// SUCCESS_MSG
+
+//* SUCCESS_MSG
 #define successMsg01 "\n\tObject Successfully Added !\n\n"
 #define successMsg02 "\n\tYou Have Been Logged Out Successfully.\n\n"
 #define successMsg03 "\n\tOperation Completed Successfully!\n\n"
@@ -42,5 +47,5 @@
 #define successMsg14 "\n\tFile Successfully Read!\n\n"
 #define successMsg15 "\n\tData Export Successful!\n\n"
 #define successMsg16 "\n\t-- S E E  Y O U  N E X T  T I M E ! --\n\n"
-                    /* END OF MSG PROTOTYPE DEFINITION DECLARATION PART */
+
 #endif

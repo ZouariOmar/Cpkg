@@ -1,20 +1,25 @@
-// by_zouari_omar_full_stack_c++_dev
-// dd/mm/yyyy
-// Path ::: pkg/import/imp_All.h
-#ifndef __IMPORT_H__
-#define __IMPORT_H__
-                    /* INCLUDE PROTOTYPE DECLARATION PART */
-// C INCLUDE SYS
+/* -----------------------------------------------
+* @author:    by_zouari_omar_full_stack_java_dev
+* @date:      mm/dd/yyyy
+? @file_name: imp_all.h
+----------------------------------------------- */
+
+#ifndef __IMP_ALL_H__
+#define __IMP_ALL_H__
+
+//? ----------------------- INCLUDE PROTOTYPE DECLARATION PART -----------------------
+//* SYS INCLUDE LIBS
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
 #include <ctype.h>
 #include <windows.h>
-// C INCLUDE CUSTOMIZED
-#include "../custom/msg.h"
-#include "../custom/color.h"
+
+//* CUSTOMIZED INCLUDE LIBS
+#include "../custom/inc/msg.h"
+#include "../custom/inc/color.h"
 #include "../func/print.h"
 #include "../func/inputV.h"
-                    /* END OF INCLUDE PROTOTYPE DECLARATION PART */
+
 #endif
