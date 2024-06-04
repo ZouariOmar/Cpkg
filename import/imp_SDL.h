@@ -1,5 +1,6 @@
 /* -----------------------------------------------
-* @author:    by_zouari_omar_full_stack_java_dev
+* @author:    @ZouariOmar
+* @IDE:       @vsc
 * @date:      mm/dd/yyyy
 ? @file_name: imp_SDL.h
 ----------------------------------------------- */
@@ -8,11 +9,11 @@
 #define __IMP_SDL_H__
 
 //? ------------------------ INCLUDE PROTOTYPE DECLARATION PART ------------------------
-//* SYS INCLUDE LIBS
+// * SYS INCLUDE LIBS
 #include <stdio.h>
 #include <stdlib.h>
 
-//* SDL INCLUDE LIBS
+// * SDL INCLUDE LIBS
 #include <SDL/SDL.h>
 #include <SDL/SDL_image.h>
 #include <SDL/SDL_ttf.h>

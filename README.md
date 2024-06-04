@@ -3,11 +3,12 @@
 A C package project containing custom headers for various functionalities.
 
 ## Table of Contents
-  - [C Package Project](#c-package-project)
+
+- [C Package Project](#c-package-project)
   - [Table of Contents](#table-of-contents)
   - [Description](#description)
   - [Folder Structure](#folder-structure)
-  - [How to Use](#how-to-Use)
+  - [How to Use](#how-to-use)
 
 ## Description
 

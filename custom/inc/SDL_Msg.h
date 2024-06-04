@@ -1,5 +1,6 @@
 /* -----------------------------------------------
-* @author:    by_zouari_omar_full_stack_java_dev
+* @author:    @ZouariOmar
+* @IDE:       @vsc
 * @date:      mm/dd/yyyy
 ? @file_name: SDL_Msg.h
 ----------------------------------------------- */
@@ -7,8 +8,8 @@
 #ifndef __SDL_MSG_H__
 #define __SDL_MSG_H__
 
-//? ------------------------ MSG PROTOTYPE DECLARATION PART ------------------------
-//* SDL_ERROR_MSG
+// ? ------------------------ MSG PROTOTYPE DECLARATION PART ------------------------
+// * SDL_ERROR_MSG
 #define SDL_ERRMSG00 "SDL initialization failed"
 #define SDL_ERRMSG01 "Window creation failed"
 #define SDL_ERRMSG02 "Texture loading failed"
@@ -31,7 +32,7 @@
 #define SDL_ERRMSG19 "Division by zero"
 #define SDL_ERRMSG20 "Stack overflow"
 
-//* SDL_SUCCESS_MSG
+// * SDL_SUCCESS_MSG
 #define SDL_SUCMSG00 "SDL initialized successfully"
 #define SDL_SUCMSG01 "Window created successfully"
 #define SDL_SUCMSG02 "Texture loaded successfully"
