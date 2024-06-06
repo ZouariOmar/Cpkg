@@ -8,7 +8,10 @@ A C package project containing custom headers for various functionalities.
   - [Table of Contents](#table-of-contents)
   - [Description](#description)
   - [Folder Structure](#folder-structure)
-  - [How to Use](#how-to-use)
+  - [How to Use (**Installation**)](#how-to-use-installation)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Contact](#contact)
 
 ## Description
 
@@ -1527,9 +1530,38 @@ C_Package
             img.ico
 ```
 
-## How to Use
+## How to Use (**Installation**)
 
-1. **Clone the Repository:**
+To import the package on your Linux system, follow these steps:
 
-   ```bash
-   git clone https://github.com/ZouariOmar/C_Package.git
+1. **Clone the Repository**:
+
+    ```sh
+    git clone https://github.com/ZouariOmar/C_Package.git
+    ```
+
+2. **Navigate to the Directory**:
+
+    ```sh
+    cd Run_C_Project
+    ```
+
+## Contributing
+
+We welcome contributions from the community. If you wish to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a new Pull Request.
+
+Please make sure your code adheres to our coding standards and includes appropriate tests.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+If you have any questions or suggestions, please feel free to reach out to us at [zouariomar20@gmail.com](mailto:zouariomar20@gmail.com)

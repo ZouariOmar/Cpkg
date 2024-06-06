@@ -1,9 +1,11 @@
-/* -----------------------------------------------
-* @author:    @ZouariOmar
-* @IDE:       @vsc
-* @date:      mm/dd/yyyy
-? @file_name: imp_SDL.h
------------------------------------------------ */
+/***************************************************
+ * @file      imp_SDL.h
+ * @author    @ZouariOmar (zouariomar20@gmail.com)
+ * @brief     IDE__VSC
+ * @version   0.1
+ * @date      2024-06-06
+ * @copyright Copyright (c) 2024
+ ***************************************************/
 
 #ifndef __IMP_SDL_H__
 #define __IMP_SDL_H__

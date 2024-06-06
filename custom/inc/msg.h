@@ -1,9 +1,11 @@
-/* -----------------------------------------------
-* @author:    @ZouariOmar
-* @IDE:       @vsc
-* @date:      mm/dd/yyyy
-? @file_name: msg.h
------------------------------------------------ */
+/***************************************************
+ * @file      msg.h
+ * @author    @ZouariOmar (zouariomar20@gmail.com)
+ * @brief     IDE__VSC
+ * @version   0.1
+ * @date      2024-06-06
+ * @copyright Copyright (c) 2024
+ ***************************************************/
 
 #ifndef __MSG_H__
 #define __MSG_H__

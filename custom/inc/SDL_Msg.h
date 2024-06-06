@@ -1,9 +1,11 @@
-/* -----------------------------------------------
-* @author:    @ZouariOmar
-* @IDE:       @vsc
-* @date:      mm/dd/yyyy
-? @file_name: SDL_Msg.h
------------------------------------------------ */
+/***************************************************
+ * @file      SDL_Msg.h
+ * @author    @ZouariOmar (zouariomar20@gmail.com)
+ * @brief     IDE__VSC
+ * @version   0.1
+ * @date      2024-06-06
+ * @copyright Copyright (c) 2024
+ ***************************************************/
 
 #ifndef __SDL_MSG_H__
 #define __SDL_MSG_H__
