@@ -11,7 +11,7 @@
 #define __MSG_H__
 
 // ? ------------------------ MSG PROTOTYPE DECLARATION PART ------------------------
-// * ERROR_MSG
+//* ERROR_MSG
 #define errorMsg01 "\n\tError: Invalid Option !\n\n"
 #define errorMsg02 "\n\tError: Out of Memory!\n\n"
 #define errorMsg03 "\n\tError: File Not Found!\n\n"
@@ -33,7 +33,7 @@
 #define errorMsg19 "\n\tError: Object Already Exist !\n\n"
 #define errorMsg20 "\n\tError: No Data Found !\n\n"
 
-// * SUCCESS_MSG
+//* SUCCESS_MSG
 #define successMsg01 "\n\tObject Successfully Added !\n\n"
 #define successMsg02 "\n\tYou Have Been Logged Out Successfully.\n\n"
 #define successMsg03 "\n\tOperation Completed Successfully!\n\n"
