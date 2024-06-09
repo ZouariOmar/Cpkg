@@ -9,11 +9,27 @@ project(app)
 # set the CMake engine version
 set(CMAKE_CXX_STANDARD 17)
 
-# find the Qt5 pkg :: Wiggets pkg
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
+# find the Qt5 pkg :: Wiggets Core Gui pkg
+find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets)
 
-# add the main.cpp file as a source file
-add_executable(${PROJECT_NAME} ../../project/src/main.cpp)
+# Add the main window source files
+set(SOURCES
+  ../../project/src/main.cpp
+  ../../project/src/lib.cpp
+)
 
-# link the Qt5 pkg :: Wiggets pkg
-target_link_libraries(SimpleQtApp Qt5::Widgets)
+# Add the main window header files
+set(HEADERS
+  ../../project/inc/inc.hpp
+)
+
+# Automatically run moc, uic, and rcc
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+
+# Add the executable target
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+
+# link the Qt5 pkg :: Wiggets Core Gui pkg
+target_link_libraries(${PROJECT_NAME} Qt5::Widgets Qt5::Core Qt5::Gui)

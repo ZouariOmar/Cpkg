@@ -8,7 +8,7 @@
  ***************************************************/
 
 //? ------------------------------ INCLUDE PROTOTYPE DECLARATION PART ------------------------------
-#include "lib.cpp"
+#include "../inc/inc.hpp"
 
 //? --------------------------------- MAIN() INT FUNCTION DEV PART ---------------------------------
 int main(int argc, char *argv[]) {
