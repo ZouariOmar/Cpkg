@@ -1,3 +1,5 @@
+#! Put this file in the "pkg" file
+
 # set the cmake min version (current - 3.29.3)
 cmake_minimum_required(VERSION 3.29.3)
 

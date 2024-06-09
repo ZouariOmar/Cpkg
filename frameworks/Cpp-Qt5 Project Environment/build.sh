@@ -1,4 +1,5 @@
-#! bash
+#! /bin/bash
+#! Put this file in the "pkg" file
 
-#? build the normal C Project Environment
-cmake -S . -B ../../bin/build
+#? build the Cpp-Qt5 Project Environment
+cd pkg && cmake -S . -B ../bin/build
