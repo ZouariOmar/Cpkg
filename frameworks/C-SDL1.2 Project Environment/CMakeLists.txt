@@ -12,8 +12,19 @@ set(CMAKE_CXX_STANDARD 17)
 # specify the C standard version
 set(CMAKE_C_STANDARD 99)
 
-# add the main.cpp file as a source
-add_executable(${PROJECT_NAME} ../../project/src/main.c)
+# Add the main window source files
+set(SOURCES
+  ../../project/src/main.c
+  ../../project/src/lib.c
+)
+
+# Add the main window header files
+set(HEADERS
+  ../../project/inc/inc.h
+)
+
+# Add the executable target
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 # add compiler definitions
 add_definitions(-D_DEFAULT_SOURCE)

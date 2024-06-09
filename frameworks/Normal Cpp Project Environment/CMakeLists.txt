@@ -9,5 +9,16 @@ project(app)
 # set the CMake engine version
 set(CMAKE_CXX_STANDARD 17)
 
-# add the main.cpp file as a source file
-add_executable(${PROJECT_NAME} ../../project/src/main.cpp)
+# Add the main window source files
+set(SOURCES
+    ../../project/src/main.cpp
+    ../../project/src/lib.cpp
+)
+
+# Add the main window header files
+set(HEADERS
+    ../../project/inc/inc.hpp
+)
+
+# Add the executable target
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
