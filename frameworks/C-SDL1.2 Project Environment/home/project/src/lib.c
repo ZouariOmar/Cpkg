@@ -14,6 +14,18 @@
 //? -------------------- INCLUDE PROTOTYPE DECLARATION PART --------------------
 #include "../inc/inc.h"
 
+//* SCREEN SURFACE DEFINTION
+SDL_Surface *screen = NULL;
+
+//* SCREEN RESOLUTION DEFINTION
+int SCREEN_WIDTH = 1920;
+int SCREEN_HEIGHT = 1080;
+int SCREEN_BPP = 32;
+
+//* SDL_COLOR PUBLIC DEFINTION
+SDL_Color WHITE = {255, 255, 255, 0};
+SDL_Color BLACK = {0, 0, 0, 0};
+
 //? ----------------------- FUNCTIONS PROTOTYPE DEV PART -----------------------
 void initEverything() {
   //* SDL initialisation process

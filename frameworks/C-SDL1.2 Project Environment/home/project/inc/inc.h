@@ -34,18 +34,18 @@
 #include <SDL/SDL_rotozoom.h>
 #include <SDL/SDL_ttf.h>
 
-//* PUBLIC VARS
-SDL_Surface *screen;
+//? --------------------- PUBLIC VARS DECLARATION PART ---------------------
+//* SCREEN SURFACE DECLARATION
+extern SDL_Surface *screen;
 
-//* SCREEN RESOLUTION
-int SCREEN_WIDTH = 1920;
-int SCREEN_HEIGHT = 1080;
-int SCREEN_BPP = 32;
+//* SCREEN RESOLUTION DECLARATION
+extern const int SCREEN_WIDTH;
+extern const int SCREEN_HEIGHT;
+extern const int SCREEN_BPP;
 
-//? --------------------- COLORS PROTOTYPE DECLARATION PART ---------------------
-//* SDL_COLOR PUBLIC DEFINTION
-SDL_Color WHITE = {255, 255, 255, 0};
-SDL_Color BLACK = {0, 0, 0, 0};
+//* SDL_COLOR PUBLIC DECLARATION
+extern const SDL_Color WHITE;
+extern const SDL_Color BLACK;
 
 //? --------------------- STRUCT PROTOTYPE DECLARATION PART ----------------------
 //? Surface struct
