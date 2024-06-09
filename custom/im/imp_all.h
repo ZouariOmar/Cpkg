@@ -21,9 +21,9 @@
 ////#include <windows.h>
 
 //* CUSTOMIZED INCLUDE LIBS
-#include "../custom/inc/msg.h"
+#include "../custom/func/inputV.h"
+#include "../custom/func/print.h"
 #include "../custom/inc/color.h"
-#include "../func/print.h"
-#include "../func/inputV.h"
+#include "../custom/inc/msg.h"
 
 #endif
