@@ -53,6 +53,7 @@ Your project is organized into the following structure:
 ├── frameworks
 │   ├── Cpp-Qt5 Project Environment
 │   │   ├── build.sh
+│   │   ├── run.sh
 │   │   ├── CMakeLists.txt
 │   │   └── home
 │   │       └── project
@@ -67,6 +68,7 @@ Your project is organized into the following structure:
 │   │               └── main.cpp
 │   ├── C-SDL1.2 Project Environment
 │   │   ├── build.sh
+│   │   ├── run.sh
 │   │   ├── CMakeLists.txt
 │   │   └── home
 │   │       └── project
@@ -77,9 +79,11 @@ Your project is organized into the following structure:
 │   │               └── main.c
 │   ├── Normal Cpp Project Environment
 │   │   ├── build.sh
+│   │   ├── run.sh
 │   │   └── CMakeLists.txt
 │   └── Normal C Project Environment
 │       ├── build.sh
+│       ├── run.sh
 │       └── CMakeLists.txt
 ├── github
 ├── libs
