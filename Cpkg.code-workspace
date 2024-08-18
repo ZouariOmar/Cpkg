@@ -6,13 +6,11 @@
 	],
 	"settings": {
 		"files.associations": {
-			"header modular file.h": "c"
+			"header modular file.h": "c",
+			"array": "cpp",
+			"string": "cpp",
+			"string_view": "cpp"
 		},
-		"cSpell.words": [
-			"INPUTV",
-			"printt",
-			"stdbool",
-			"SUCMSG"
-		]
+		"cSpell.words": ["INPUTV", "printt", "stdbool", "SUCMSG"]
 	}
 }
