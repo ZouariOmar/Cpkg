@@ -12,8 +12,7 @@
 
 // ? ------------------------- INCLUDE PROTOTYPE DECLARATION PART -------------------------
 //* Sys include headers
-#include <iostream>
-#include <queue>
+#include <bits/stdc++.h>
 
 // ? ------------------------- STRUCT PROTOTYPE DECLARATION PART -------------------------
 
@@ -35,11 +34,17 @@ struct node {
 namespace BT {
 //* Traversal Binary Tree class
 class TBT {
+ private:
+  int maxVal(node *);  // Max value in BT
+  int minVal(node *);  // Min value in BT
+
  public:
-  void in_ot(node *);    // In-order Traversal (DFT)
-  void pre_ot(node *);   // Pre-order Traversal (DFT)
-  void post_ot(node *);  // Post-order Traversal (DFT)
-  void lvl_ot(node *);   // Level-order Traversal (BFT)
+  void in_ot(node *);                          // In-order Traversal (DFT)
+  void pre_ot(node *);                         // Pre-order Traversal (DFT)
+  void post_ot(node *);                        // Post-order Traversal (DFT)
+  void lvl_ot(node *);                         // Level-order Traversal (BFT)
+  node *v_to_bst(std::vector<int>, int, int);  // Vector to Binary Search Tree (DFT)
+  bool is_bst(node *);                         // is Binary Search Tree ?
 };
 }  // namespace BT
 #endif

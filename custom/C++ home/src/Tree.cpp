@@ -88,3 +88,67 @@ void BT::TBT::lvl_ot(node *root) {
     if (tmp->right) q.push(tmp->right);
   }
 }
+
+//////////////////////////////////////////////////////////////////////
+
+/**
+ * @brief #### Convert a vector to a Binary Search Tree
+ * @param arr
+ * @param l
+ * @param h
+ * @return node*
+ */
+node *BT::TBT::v_to_bst(std::vector<int> arr, int l, int h) {
+  // Sort the vector
+  std::sort(arr.begin(), arr.end());
+
+  // Stop when the base length more then size of the vector
+  if (h < l) return nullptr;
+
+  // Add the new node
+  int mid{(l + h) / 2};
+  node *root = new node(mid);
+
+  // Same think to the left and right node
+  root->left = v_to_bst(arr, l, mid - 1);
+  root->right = v_to_bst(arr, mid + 1, h);
+
+  return root;
+}
+
+/**
+ * @brief #### Check if the Binary Tree is a Binary Search Tree
+ * @param root
+ * @return true
+ * @return false
+ */
+bool BT::TBT::is_bst(node *root) {
+  // Return true if the node is nullptr
+  if (!root) return true;
+
+  // The main check statement
+  if ((root->left && maxVal(root->left) >= root->data) || (root->right && minVal(root->right) <= root->data) || !is_bst(root->left) || !is_bst(root->right))
+    return false;
+
+  return true;
+}
+
+/**
+ * @brief #### Return the max value in a Binary Tre
+ * @param root
+ * @return int
+ */
+int BT::TBT::maxVal(node *root) {
+  if (!root) return INT16_MIN;
+  return std::max({root->data, maxVal(root->left), maxVal(root->right)});
+}
+
+/**
+ * @brief #### Return the min value in a Binary Tree
+ * @param root
+ * @return int
+ */
+int BT::TBT::minVal(node *root) {
+  if (!root) return INT16_MAX;
+  return std::min({root->data, minVal(root->left), minVal(root->right)});
+}
