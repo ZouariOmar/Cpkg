@@ -16,8 +16,7 @@
 
 // ? ------------------------- STRUCT PROTOTYPE DECLARATION PART -------------------------
 
-//* Declare the binary tree structure
-struct node {
+struct node {  //* Declare the binary tree structure
   // Vars declaration part
   int data;
   node *left,
@@ -30,8 +29,7 @@ struct node {
 
 //? --------------------------- FUNCTIONS PROTOTYPE DEV PART ---------------------------
 
-//* Binary Tree space section
-namespace BT {
+namespace BT {  //* Binary Tree space section
 //* Traversal Binary Tree class
 class TBT {
  private:
