@@ -22,11 +22,9 @@ using namespace std;
  */
 int main() {
   vector<int> arr = {1, 0, 3, 4, -1, 8, -2, 100};
-  LL::SLL sl;
+  LL::DLL d;
 
-  sll *root = sl.v_to_sll(arr);
-
-  sl.sortSLL(root);
-
-  sl.printSll(root);
+  dll *root = d.to_dll(arr);
+  d.sort(root);
+  d.print(root);
 }
