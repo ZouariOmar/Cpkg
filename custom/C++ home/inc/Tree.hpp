@@ -41,7 +41,7 @@ class TBT {
   void pre_ot(node *);                         // Pre-order Traversal (DFT)
   void post_ot(node *);                        // Post-order Traversal (DFT)
   void lvl_ot(node *);                         // Level-order Traversal (BFT)
-  node *v_to_bst(std::vector<int>, int, int);  // Vector to Binary Search Tree (DFT)
+  node *to_bst(std::vector<int>, int, int);  // Vector to Binary Search Tree (DFT)
   bool is_bst(node *);                         // is Binary Search Tree ?
 };
 }  // namespace BT

@@ -36,6 +36,8 @@ struct dll {  //* Declare the DLL structure
   dll(int);
 };
 
+typedef dll cll;  //* Declare the CLL structure
+
 //? ------------------- NAMESPACE/Classes/FUNCTIONS PROTOTYPE DEV PART -------------------
 
 namespace LL {  //* Linked List space section
@@ -44,6 +46,7 @@ class SLL {     //* Singly Linked List class
   //* Custom function declaration part
   sll *to_sll(std::vector<int>);  // Vector to SLL
   void sort(sll *);
+  void reverse(sll **);
   void print(sll *);
 };  // class SLL
 
@@ -51,9 +54,18 @@ class DLL {  //* Doubly linked list class
  public:
   dll *to_dll(std::vector<int>);
   void sort(dll *);
+  void reverse(dll **);
   void print(dll *);
   void reprint(dll *);
 };  // class DLL
+
+class CLL {  //* Circular linked list class
+ public:
+  cll *to_cll(std::vector<int>);
+  void sort(cll *);
+  void print(cll *);
+  void reprint(cll *);
+};  // Class CLL
 
 }  // namespace LL
 

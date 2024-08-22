@@ -84,6 +84,23 @@ void LL::SLL::sort(sll *root) {
   } while (swapped);
 }
 
+/**
+ * @brief ### Reverse the SLL
+ * @param root 
+ */
+void LL::SLL::reverse(sll **root) {
+  if (!(*root) || !(*root)->next) return;
+
+  sll *next, *current = *root, *prev{nullptr};
+  while (current) {
+    next = current->next;
+    current->next = prev; 
+    prev = current;
+    current = next;
+  }
+  *root = prev;
+}
+
 /***************************************************
  *? ===== Double Linked List (DLL) Dev Section =====
  ***************************************************/
@@ -127,7 +144,7 @@ dll *LL::DLL::to_dll(std::vector<int> arr) {
 }
 
 /**
- * @brief ### Print the dll from head to queue
+ * @brief ### Print the dll from head to tail
  * *
  * - #### Forward Mode
  * @param head
@@ -140,7 +157,7 @@ void LL::DLL::print(dll *head) {
 }
 
 /**
- * @brief ### Print the dll from queue to head
+ * @brief ### Print the dll from tail to head
  * *
  * - #### Reverse Mode
  * @param head
@@ -171,6 +188,115 @@ void LL::DLL::sort(dll *root) {
     swapped = false;
     dll *current = root;
     while (current->next) {
+      if (current->data > current->next->data) {
+        std::swap(current->data, current->next->data);
+        swapped = true;
+      }
+      current = current->next;
+    }
+  } while (swapped);
+}
+
+/**
+ * @brief ### Reverse the DLL
+ * @param root
+ */
+void LL::DLL::reverse(dll **root) {
+  if (!(*root) || !(*root)->next) return;
+
+  dll *next, *current = *root, *prev{nullptr};
+  while (current) {
+    next = current->next;
+    current->next = prev;
+    prev = current;
+    current = next;
+  }
+  *root = prev;
+}
+
+/*****************************************************
+ *? ===== Circular Linked List (CLL) Dev Section =====
+ *****************************************************/
+
+/**
+ * @brief #### Transfer the data from vector to CLL (V0)
+ * *
+ * - Push back the new data
+ * @param arr
+ * @param x
+ * @return dll*
+ */
+cll *LL::CLL::to_cll(std::vector<int> arr) {
+  cll *root = new cll(arr[0]);
+  cll *trv = root;
+
+  size_t len{arr.size()}, i{1};
+  while (i < len) {
+    cll *newNode = new cll(arr[i]);
+    newNode->prev = trv;
+    trv->next = newNode;
+    trv = trv->next;
+    i++;
+  }
+
+  trv->next = root;
+  root->prev = trv;
+
+  return root;
+}
+
+/**
+ * @brief ### Print the dll from tail to head
+ * *
+ * - #### Reverse Mode
+ * @param head
+ */
+void LL::CLL::print(cll *root) {
+  if (!root) return;
+
+  // Print the root data in the first position
+  std::cout << root->data << " ";
+
+  cll *current = root->next;
+  while (current != root) {
+    std::cout << current->data << " ";
+    current = current->next;
+  }
+}
+
+/**
+ * @brief ### Print the dll from head to tail
+ * *
+ * - #### Forward Mode
+ * @param head
+ */
+void LL::CLL::reprint(cll *root) {
+  if (!root) return;
+
+  cll *current = root->prev;
+  while (current != root) {
+    std::cout << current->data << " ";
+    current = current->prev;
+  }
+
+  // Print the root data in the last position
+  std::cout << root->data << " ";
+}
+
+/**
+ * @brief ### Sort the CLL in ascending order
+ * *
+ * - #### Using the bubble-sort
+ * @param root
+ */
+void LL::CLL::sort(cll *root) {
+  if (!root) return;
+
+  bool swapped;
+  do {
+    swapped = false;
+    dll *current = root;
+    while (current->next != root) {
       if (current->data > current->next->data) {
         std::swap(current->data, current->next->data);
         swapped = true;

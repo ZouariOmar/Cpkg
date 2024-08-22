@@ -98,20 +98,20 @@ void BT::TBT::lvl_ot(node *root) {
  * @param h
  * @return node*
  */
-node *BT::TBT::v_to_bst(std::vector<int> arr, int l, int h) {
-  // Sort the vector
-  std::sort(arr.begin(), arr.end());
-
+node *BT::TBT::to_bst(std::vector<int> arr, int l, int h) {
   // Stop when the base length more then size of the vector
   if (h < l) return nullptr;
+
+  // Sort the vector
+  std::sort(arr.begin(), arr.end());
 
   // Add the new node
   int mid{(l + h) / 2};
   node *root = new node(mid);
 
   // Same think to the left and right node
-  root->left = v_to_bst(arr, l, mid - 1);
-  root->right = v_to_bst(arr, mid + 1, h);
+  root->left = to_bst(arr, l, mid - 1);
+  root->right = to_bst(arr, mid + 1, h);
 
   return root;
 }
