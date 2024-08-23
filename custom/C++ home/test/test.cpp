@@ -10,9 +10,8 @@
 // ? ------------------------- INCLUDE PROTOTYPE DECLARATION PART -------------------------
 // #include "../src/Tree.cpp"
 // using namespace BT;
-#include "../src/linkList.cpp"
-using namespace LL;
-using namespace std;
+#include "../src/sort.cpp"
+using namespace ST;
 
 //? --------------------------- MAIN TEST PROTOTYPE DEV PART ---------------------------
 
@@ -21,14 +20,6 @@ using namespace std;
  * @return int
  */
 int main() {
-  vector<int> arr = {1, 0, 3, 4, -1, 8, -2, 100};
-  LL::CLL c;
-
-  cll *root = c.to_cll(arr);
-
-  c.sort(root);
-
-  c.print(root);
 
   return 0;
 }
