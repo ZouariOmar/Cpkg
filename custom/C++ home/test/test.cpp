@@ -12,6 +12,7 @@
 // using namespace BT;
 #include "../src/sort.cpp"
 using namespace ST;
+using namespace std;
 
 //? --------------------------- MAIN TEST PROTOTYPE DEV PART ---------------------------
 

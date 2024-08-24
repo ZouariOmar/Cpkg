@@ -25,7 +25,6 @@ void bubble_sort(std::vector<int> &, size_t);
 void bubble_sort(std::string &);
 void bubble_sort(std::string &, size_t);
 void bubble_sort(int *, size_t);
-void bubble_sort(int *);
 void bubble_sort(char *, size_t);
 void bubble_sort(char *);
 
@@ -35,7 +34,6 @@ void insertion_sort(std::vector<int> &, size_t);
 void insertion_sort(std::string &);
 void insertion_sort(std::string &, size_t);
 void insertion_sort(int *, size_t);
-void insertion_sort(int *);
 void insertion_sort(char *, size_t);
 void insertion_sort(char *);
 
