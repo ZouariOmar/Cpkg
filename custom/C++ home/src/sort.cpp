@@ -249,3 +249,120 @@ void ST::insertion_sort(char *str, size_t len) {
 void ST::insertion_sort(char str[]) {
   insertion_sort(str, std::strlen(str));
 }
+
+/*****************************************
+ *? ===== Selection Sort Dev Section =====
+ *****************************************/
+
+/**
+ * @brief ### Selection Sort Algorithm
+ * *
+ * - #### For vector<int>
+ * @param arr
+ * @param len
+ * @link @Selection_Sort
+ */
+void ST::selection_sort(std::vector<int> &arr, size_t len) {
+  int i{};
+  while (i < len - 1) {
+    int mPos{i};
+    for (int j = i + 1; j < len; j++)
+      if (arr[j] < arr[mPos]) mPos = j;
+
+    if (mPos != i) std::swap(arr[mPos], arr[i]);
+    i++;
+  }
+}
+
+/**
+ * @brief ### Selection Sort Algorithm
+ * *
+ * - #### For vector<int>
+ * @param arr
+ * @link @Selection_Sort
+ */
+void ST::selection_sort(std::vector<int> &arr) {
+  selection_sort(arr, arr.size());
+}
+
+/**
+ * @brief ### Selection Sort Algorithm
+ * *
+ * - #### For string (using ASCII cmp)
+ * @param str
+ * @param len
+ * @link @Selection_Sort
+ */
+void ST::selection_sort(std::string &str, size_t len) {
+  int i{};
+  while (i < len - 1) {
+    int mPos{i};
+    for (int j = i + 1; j < len; j++)
+      if (str[j] < str[mPos]) mPos = j;
+
+    if (mPos != i) std::swap(str[mPos], str[i]);
+    i++;
+  }
+}
+
+/**
+ * @brief ### Selection Sort Algorithm
+ * *
+ * - #### For string (using ASCII cmp)
+ * @param str
+ * @link @Selection_Sort
+ */
+void ST::selection_sort(std::string &str) {
+  selection_sort(str, str.size());
+}
+
+/**
+ * @brief ### Selection Sort Algorithm
+ * *
+ * - #### For int[]
+ * @param arr
+ * @param len
+ * @link @Selection_Sort
+ */
+void ST::selection_sort(int *arr, size_t len) {
+  int i{};
+  while (i < len - 1) {
+    int mPos{i};
+    for (int j = i + 1; j < len; j++)
+      if (arr[j] < arr[mPos]) mPos = j;
+
+    if (mPos != i) std::swap(arr[mPos], arr[i]);
+    i++;
+  }
+}
+
+/**
+ * @brief ### Selection Sort Algorithm
+ * *
+ * - #### For char[]
+ * @param str
+ * @param len
+ * @link @Selection_Sort
+ */
+void ST::selection_sort(char *str, size_t len) {
+  int i{};
+  while (i < len - 1) {
+    int mPos{i};
+    for (int j = i + 1; j < len; j++)
+      if (str[j] < str[mPos]) mPos = j;
+
+    if (mPos != i) std::swap(str[mPos], str[i]);
+    i++;
+  }
+}
+
+/**
+ * @brief ### Selection Sort Algorithm
+ * *
+ * - #### For char[]
+ * @param str
+ * @link @Selection_Sort
+ */
+void ST::selection_sort(char *str) {
+  selection_sort(str, strlen(str));
+}

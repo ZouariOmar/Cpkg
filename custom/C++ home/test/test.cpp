@@ -21,6 +21,12 @@ using namespace std;
  * @return int
  */
 int main() {
+  char arr[] = "omar";
+
+  selection_sort(arr);
+
+  for (int i = 0; i < 4; i++)
+    cout << arr[i] << " ";
 
   return 0;
 }
