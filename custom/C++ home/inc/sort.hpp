@@ -19,32 +19,17 @@
 //? ------------------- NAMESPACE/Classes/FUNCTIONS PROTOTYPE DEV PART -------------------
 namespace ST {
 
-//* Bubble sort methods declaration part
-void bubble_sort(std::vector<int> &);
-void bubble_sort(std::vector<int> &, size_t);
-void bubble_sort(std::string &);
-void bubble_sort(std::string &, size_t);
-void bubble_sort(int *, size_t);
-void bubble_sort(char *, size_t);
-void bubble_sort(char *);
+//* Bubble sort template declaration part
+template <typename T>
+void bubble_sort(T &, size_t);
 
-//* Insertion sort methods declaration part
-void insertion_sort(std::vector<int> &);
-void insertion_sort(std::vector<int> &, size_t);
-void insertion_sort(std::string &);
-void insertion_sort(std::string &, size_t);
-void insertion_sort(int *, size_t);
-void insertion_sort(char *, size_t);
-void insertion_sort(char *);
+//* Insertion sort template declaration part
+template <typename T>
+void insertion_sort(T &, size_t);
 
 //* Selection sort methods declaration part
-void selection_sort(std::vector<int> &);
-void selection_sort(std::vector<int> &, size_t);
-void selection_sort(std::string &);
-void selection_sort(std::string &, size_t);
-void selection_sort(int *, size_t);
-void selection_sort(char *, size_t);
-void selection_sort(char *);
+template <typename T>
+void selection_sort(T &, size_t);
 
 }  // namespace ST
 

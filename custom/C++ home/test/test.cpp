@@ -21,11 +21,11 @@ using namespace std;
  * @return int
  */
 int main() {
-  char arr[] = "omar";
+  int arr[] = {1, 5, -1, -5, -10, 55};
 
-  selection_sort(arr);
+  bubble_sort<int [], 6>(arr);
 
-  for (int i = 0; i < 4; i++)
+  for (int i = 0; i < 6; i++)
     cout << arr[i] << " ";
 
   return 0;
