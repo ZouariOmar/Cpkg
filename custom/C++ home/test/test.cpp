@@ -21,11 +21,12 @@ using namespace std;
  * @return int
  */
 int main() {
-  int arr[] = {1, 5, -1, -5, -10, 55};
+  char arr[] = "dcba";
+  size_t len = 4;
 
-  bubble_sort<int [], 6>(arr);
+  tree_sort<char []>(arr, len);
 
-  for (int i = 0; i < 6; i++)
+  for (int i = 0; i < len; i++)
     cout << arr[i] << " ";
 
   return 0;

@@ -37,12 +37,12 @@ class TBT {
   int minVal(node *);  // Min value in BT
 
  public:
-  void in_ot(node *);                          // In-order Traversal (DFT)
-  void pre_ot(node *);                         // Pre-order Traversal (DFT)
-  void post_ot(node *);                        // Post-order Traversal (DFT)
-  void lvl_ot(node *);                         // Level-order Traversal (BFT)
+  void in_ot(node *);                        // In-order Traversal (DFT)
+  void pre_ot(node *);                       // Pre-order Traversal (DFT)
+  void post_ot(node *);                      // Post-order Traversal (DFT)
+  void lvl_ot(node *);                       // Level-order Traversal (BFT)
   node *to_bst(std::vector<int>, int, int);  // Vector to Binary Search Tree (DFT)
-  bool is_bst(node *);                         // is Binary Search Tree ?
+  bool is_bst(node *);                       // is Binary Search Tree ?
 };
 }  // namespace BT
 #endif

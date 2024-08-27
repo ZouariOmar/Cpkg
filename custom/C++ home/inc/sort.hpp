@@ -27,9 +27,34 @@ void bubble_sort(T &, size_t);
 template <typename T>
 void insertion_sort(T &, size_t);
 
-//* Selection sort methods declaration part
+//* Selection sort template declaration part
 template <typename T>
 void selection_sort(T &, size_t);
+
+//* Merge sort template declaration part
+template <typename T>
+void merge_sort(T &, size_t, size_t);
+template <typename T>
+void merge(T &, size_t, size_t, size_t);
+template <>
+void merge(std::string &, size_t, size_t, size_t);
+
+//* Tree sort template declaration part
+struct node {  //* Declare the binary tree structure
+  // Vars declaration part
+  int data;
+  node *left,
+      *right;
+  // Contractures declaration part
+  node();
+  node(int);
+  node(int, node *, node *);
+};
+template<typename T>
+void tree_sort(T &, size_t);
+node *to_BST(node *, int);
+template <typename T>
+void to_T(node *, T &);
 
 }  // namespace ST
 
