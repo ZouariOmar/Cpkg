@@ -10,8 +10,9 @@
 // ? ------------------------- INCLUDE PROTOTYPE DECLARATION PART -------------------------
 // #include "../src/Tree.cpp"
 // using namespace BT;
-#include "../src/sort.cpp"
-using namespace ST;
+//#include "../src/sort.cpp"
+#include "../src/math.cpp"
+using namespace math;
 using namespace std;
 
 //? --------------------------- MAIN TEST PROTOTYPE DEV PART ---------------------------
@@ -20,14 +21,8 @@ using namespace std;
  * @brief #### Main test function
  * @return int
  */
-int main() {
-  char arr[] = "dcba";
-  size_t len = 4;
+int main(int argc, char **argv) {
 
-  tree_sort<char []>(arr, len);
-
-  for (int i = 0; i < len; i++)
-    cout << arr[i] << " ";
-
+  cout << math::is_prime(107) << endl;
   return 0;
 }

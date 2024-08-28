@@ -127,10 +127,7 @@ bool BT::TBT::is_bst(node *root) {
   if (!root) return true;
 
   // The main check statement
-  if ((root->left && maxVal(root->left) >= root->data) || (root->right && minVal(root->right) <= root->data) || !is_bst(root->left) || !is_bst(root->right))
-    return false;
-
-  return true;
+  return !((root->left && maxVal(root->left) >= root->data) || (root->right && minVal(root->right) <= root->data) || !is_bst(root->left) || !is_bst(root->right));
 }
 
 /**
