@@ -97,8 +97,19 @@
 			"typeindex": "cpp",
 			"typeinfo": "cpp",
 			"valarray": "cpp",
-			"variant": "cpp"
+			"variant": "cpp",
+			"generator": "cpp",
+			"print": "cpp",
+			"text_encoding": "cpp"
 		},
-		"cSpell.words": ["INPUTV", "printt", "stdbool", "SUCMSG"]
+		"cSpell.words": [
+			"INPUTV",
+			"printt",
+			"stdbool",
+			"SUCMSG"
+		],
+		"conventionalCommits.scopes": [
+			"templates"
+		]
 	}
 }
