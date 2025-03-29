@@ -1,30 +1,33 @@
-/***************************************************
- * @file      math.hpp
- * @author    @ZouariOmar (zouariomar20@gmail.com)
- * @brief     IDE__VSC
- * @version   0.1
- * @date      28-08-2024
- * @copyright Copyright (c) 2024
- ***************************************************/
+/**
+ * @file    math.hpp
+ * @author  @ZouariOmar (zouariomar20@gmail.com)
+ * @brief   Main math header file
+ * @version 0.1
+ * @date    2025-03-29
+ * @copyright Copyright (c) 2025
+ * @link https://github.com/ZouariOmar/Cpkg/raw/refs/heads/main/custom/C++%20home/inc/math.hpp math.hpp @endlink
+ */
 
 #ifndef __MATH_HPP__
 #define __MATH_HPP__
 
-//? ------------------------- INCLUDE PROTOTYPE DECLARATION PART -------------------------
-//* Sys include headers
-#include <iostream>
+//? Include prototype declaration part
+//* Include c++ std headers
 #include <cmath>
+#include <iostream>
 
-// ? ------------------------- STRUCT PROTOTYPE DECLARATION PART -------------------------
+//? Namespace prototype declaration part
 
-//? ------------------- NAMESPACE/Classes/FUNCTIONS PROTOTYPE DEV PART -------------------
-
-namespace math {
+/**
+ * @namespace Math
+ * @brief     Math namespace
+ */
+namespace Math {
 int factorial(int);
 int fib(int);
 int gcd(int, int);
 int lcm(int, int);
 bool is_prime(int);
-}  // namespace math
+} // namespace Math
 
-#endif
+#endif // __MATH_HPP__

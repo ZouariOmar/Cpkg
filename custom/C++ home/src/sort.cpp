@@ -26,7 +26,7 @@
  * @link @Bubble_Sort
  */
 template <typename T>
-void ST::bubble_sort(T &arr, size_t len) {
+void Sort::bubble_sort(T &arr, size_t len) {
   bool swapped{true};
   for (size_t i{}; i < len - 1 && swapped; i++)
     for (size_t j{}; j < len - i - 1; j++)
@@ -50,7 +50,7 @@ void ST::bubble_sort(T &arr, size_t len) {
  * @link @Insertion_Sort
  */
 template <typename T>
-void ST::insertion_sort(T &arr, size_t len) {
+void Sort::insertion_sort(T &arr, size_t len) {
   int i{1};
   while (i < len) {
     int key{arr[i]}, j{i - 1};
@@ -77,7 +77,7 @@ void ST::insertion_sort(T &arr, size_t len) {
  * @link @Selection_Sort
  */
 template <typename T>
-void ST::selection_sort(T &arr, size_t len) {
+void Sort::selection_sort(T &arr, size_t len) {
   int i{};
   while (i < len - 1) {
     int mPos{i};
@@ -103,7 +103,7 @@ void ST::selection_sort(T &arr, size_t len) {
  * @link @Merge_Sort
  */
 template <typename T>
-void ST::merge_sort(T &arr, size_t l, size_t h) {
+void Sort::merge(T &arr, size_t l, size_t h) {
   if (h <= l) return;
   size_t mid = (l + h) / 2;
   merge_sort(arr, l, mid);
@@ -112,7 +112,7 @@ void ST::merge_sort(T &arr, size_t l, size_t h) {
 }
 
 template <typename T>
-void ST::merge(T &arr, size_t l, size_t mid, size_t h) {
+void Sort::merge(T &arr, size_t l, size_t mid, size_t h) {
   // length of the first sub_lists "n1" and "n2"
   int n1 = mid - l + 1;
   int n2 = h - mid;
@@ -152,7 +152,7 @@ void ST::merge(T &arr, size_t l, size_t mid, size_t h) {
 }
 
 template <>
-void ST::merge(std::string &arr, size_t l, size_t mid, size_t h) {
+void Sort::merge(std::string &arr, size_t l, size_t mid, size_t h) {
   size_t n1 = mid - l + 1;
   size_t n2 = h - mid;
 
@@ -184,44 +184,27 @@ void ST::merge(std::string &arr, size_t l, size_t mid, size_t h) {
   }
 }
 
-/*****************************************
- *? ===== Tree Sort Dev Section =====
- *****************************************/
-
 /**
- * @brief #### Construct a new node::node struct
+ * @fn           Sort::TreeNode::TreeNode(int, TreeNode *, TreeNode *)
+ * @brief        Construct a new Sort::TreeNode::TreeNode object
+ * @param _data  int
+ * @param _left  {TreeNode *}
+ * @param _right {TreeNode *}
  */
-ST::node::node()
-    : data(0), left(nullptr), right(nullptr) {};
+Sort::TreeNode::TreeNode(int _data, TreeNode *_left, TreeNode *_right)
+    : data(_data), left(_left), right(_right) {};
 
 /**
- * @brief #### Construct a new node::node struct
- * @param x
- */
-ST::node::node(int x)
-    : data(x), left(nullptr), right(nullptr) {};
-
-/**
- * @brief #### Construct a new node::node struct
- * @param x
- * @param y
- * @param z
- */
-ST::node::node(int x, ST::node *y, ST::node *z)
-    : data(x), left(y), right(z) {};
-
-/**
- * @brief ### Tree Sort Algorithm
- * - #### T: vector<int> | string | int* |char*
- * @tparam T
- * @param arr
- * @param len
- * @link @Tree_Sort
+ * @fn        Sort::tree_sort(T &, size_t)
+ * @brief     Tree sort algorithm
+ * @tparam    T <int *|char *|std::vector<int>|..>
+ * @param arr {T &}
+ * @param len {size_t}
  */
 template <typename T>
-void ST::tree_sort(T &arr, size_t len) {
+void Sort::tree_sort(T &arr, size_t len) {
   if (!len) return;
-  ST::node *root = nullptr;
+  Sort::TreeNode *root = nullptr;
 
   for (size_t i{}; i < len; i++)
     root = to_BST(root, arr[i]);
@@ -234,11 +217,11 @@ void ST::tree_sort(T &arr, size_t len) {
  * @brief #### Convert a vector to a Binary Search Tree
  * @param root
  * @param val
- * @return ST::node*
+ * @return Sort::node*
  * @link @Tree_Sort
  */
-ST::node *ST::to_BST(node *root, int val) {
-  if (!root) return (new ST::node(val));
+Sort::TreeNode *Sort::to_BST(TreeNode *root, int val) {
+  if (!root) return (new Sort::TreeNode(val));
 
   (val < root->data) ? root->left = to_BST(root->left, val) : root->right = to_BST(root->right, val);
 
@@ -253,7 +236,7 @@ ST::node *ST::to_BST(node *root, int val) {
  * @link @Tree_Sort
  */
 template<typename T>
-void ST::to_T(ST::node *root, T &arr) {
+void Sort::to_T(Sort::TreeNode *root, T &arr) {
   static int i{};
   if (!root) return;
   to_T(root->left, arr);

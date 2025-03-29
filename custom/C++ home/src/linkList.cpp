@@ -1,16 +1,17 @@
-/***************************************************
- * @file      Tree.cpp
+/**
+ * @file      linkList.cpp
  * @author    @ZouariOmar (zouariomar20@gmail.com)
- * @brief     IDE__VSC
+ * @brief     Main linkedList source file
  * @version   0.1
- * @date      18-08-2024
- * @copyright Copyright (c) 2024
- ***************************************************/
+ * @date      2025-03-29
+ * @copyright Copyright (c) 2025
+ * @link https://github.com/ZouariOmar/Cpkg/raw/refs/heads/main/custom/C++%20home/src/linkedList.cpp linkedList.cpp @endlink
+ */
 
-// ? ------------------------- INCLUDE PROTOTYPE DECLARATION PART -------------------------
+//? Include prototype declaration part
 #include "../inc/linkedList.hpp"
 
-//? --------------------------- FUNCTIONS PROTOTYPE DEV PART ---------------------------
+//? Function(s) prototype dev part
 
 /***************************************************
  *? ===== Singly Linked List (LinkedList::SinglyLinkedList) Dev Section =====

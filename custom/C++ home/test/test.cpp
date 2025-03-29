@@ -12,17 +12,18 @@
 // using namespace BT;
 //#include "../src/sort.cpp"
 #include "../src/math.cpp"
-using namespace math;
+using namespace Math;
 using namespace std;
 
 //? --------------------------- MAIN TEST PROTOTYPE DEV PART ---------------------------
 
 /**
- * @brief #### Main test function
+ * @fn     main(void)
+ * @brief  Main test function
  * @return int
  */
-int main(int argc, char **argv) {
+int main(void) {
 
-  cout << math::is_prime(107) << endl;
-  return 0;
+  cout << Math::is_prime(107) << endl;
+  return EXIT_SUCCESS;
 }

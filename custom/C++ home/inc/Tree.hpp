@@ -16,7 +16,7 @@
 
 // ? ------------------------- STRUCT PROTOTYPE DECLARATION PART -------------------------
 
-struct node {  //* Declare the binary tree structure
+struct node { //* Declare the binary tree structure
   // Vars declaration part
   int data;
   node *left,
@@ -29,20 +29,20 @@ struct node {  //* Declare the binary tree structure
 
 //? --------------------------- FUNCTIONS PROTOTYPE DEV PART ---------------------------
 
-namespace BT {  //* Binary Tree space section
+namespace BT { //* Binary Tree space section
 //* Traversal Binary Tree class
 class TBT {
- private:
-  int maxVal(node *);  // Max value in BT
-  int minVal(node *);  // Min value in BT
+private:
+  int maxVal(node *); // Max value in BT
+  int minVal(node *); // Min value in BT
 
- public:
-  void in_ot(node *);                        // In-order Traversal (DFT)
-  void pre_ot(node *);                       // Pre-order Traversal (DFT)
-  void post_ot(node *);                      // Post-order Traversal (DFT)
-  void lvl_ot(node *);                       // Level-order Traversal (BFT)
-  node *to_bst(std::vector<int>, int, int);  // Vector to Binary Search Tree (DFT)
-  bool is_bst(node *);                       // is Binary Search Tree ?
+public:
+  void in_ot(node *);                       // In-order Traversal (DFT)
+  void pre_ot(node *);                      // Pre-order Traversal (DFT)
+  void post_ot(node *);                     // Post-order Traversal (DFT)
+  void lvl_ot(node *);                      // Level-order Traversal (BFT)
+  node *to_bst(std::vector<int>, int, int); // Vector to Binary Search Tree (DFT)
+  bool is_bst(node *);                      // is Binary Search Tree ?
 };
-}  // namespace BT
+} // namespace BT
 #endif
