@@ -28,7 +28,7 @@ class LinkedListBase;
 class SinglyLinkedList;
 class DoublyLinkedList;
 class CircularLinkedList;
-} // namespace LinkedList
+} // Namespace LinkedList
 
 //? Class(es) prototype declaration part
 
