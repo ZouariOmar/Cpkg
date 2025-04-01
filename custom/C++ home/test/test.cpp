@@ -1,21 +1,20 @@
-/***************************************************
- * @file      Tree.cpp
+/**
+ * @file      test.cpp
  * @author    @ZouariOmar (zouariomar20@gmail.com)
- * @brief     IDE__VSC
+ * @brief     tester file
  * @version   0.1
- * @date      18-08-2024
- * @copyright Copyright (c) 2024
- ***************************************************/
+ * @date      2025-04-01
+ * @copyright Copyright (c) 2025
+ * @link https://github.com/ZouariOmar/Cpkg/raw/refs/heads/main/custom/C++%20home/test/test.cpp test.cpp @endlink
+ */
 
-// ? ------------------------- INCLUDE PROTOTYPE DECLARATION PART -------------------------
-// #include "../src/Tree.cpp"
-// using namespace BT;
-//#include "../src/sort.cpp"
-#include "../src/math.cpp"
-using namespace Math;
+//? Include prototype declaration part
+#include "../src/Trees.cpp"
+#include "../src/Sort.cpp"
+using namespace Sort;
 using namespace std;
 
-//? --------------------------- MAIN TEST PROTOTYPE DEV PART ---------------------------
+//? Main test prototype dev part
 
 /**
  * @fn     main(void)
@@ -23,7 +22,9 @@ using namespace std;
  * @return int
  */
 int main(void) {
-
-  cout << Math::is_prime(107) << endl;
+  vector<int> arr({5, 77, 1, 6, 0, 778});
+  tree_sort(arr, arr.size());
+  for (const int &it : arr)
+    cout << it << " ";
   return EXIT_SUCCESS;
 }

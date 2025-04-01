@@ -1,15 +1,15 @@
 /**
- * @file    trees.cpp
- * @author  @ZouariOmar (zouariomar20@gmail.com)
- * @brief   Main trees source file
- * @version 0.1
- * @date    2025-03-30
+ * @file      Trees.cpp
+ * @author    @ZouariOmar (zouariomar20@gmail.com)
+ * @brief     Main Trees source file
+ * @version   0.1
+ * @date      2025-03-30
  * @copyright Copyright (c) 2025
- * @link https://github.com/ZouariOmar/Cpkg/raw/refs/heads/main/custom/C++%20home/src/trees.cpp trees.cpp @endlink
+ * @link https://github.com/ZouariOmar/Cpkg/raw/refs/heads/main/custom/C++%20home/src/Trees.cpp Trees.cpp @endlink
  */
 
 //? Include prototype declaration part
-#include "../inc/trees.hpp"
+#include "../inc/Trees.hpp"
 
 //? Function(s) prototype dev part
 
@@ -91,11 +91,13 @@ void BinaryTree::TraversalBinaryTree::ShowLevelOrderedTraversalTree(Node *root) 
  * @fn        BinaryTree::TraversalBinaryTree::to_binarySearchTree(std::vector<int>, int, int);
  * @brief     Convert a vector to a Binary Search Tree
  * @param arr std::vector<int>
+ * @tparam T  {std::vector<int>} 
  * @param l   int
  * @param h   int
  * @return    {BinaryTree::Node *}
  */
-BinaryTree::Node *BinaryTree::TraversalBinaryTree::to_binarySearchTree(std::vector<int> arr, int l, int h) {
+template <typename T>
+BinaryTree::Node *BinaryTree::TraversalBinaryTree::to_binarySearchTree(T arr, int l, int h) {
   // Stop when the base length more then size of the vector
   if (h < l)
     return nullptr;

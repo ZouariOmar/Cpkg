@@ -1,18 +1,18 @@
 /**
- * @file      trees.hpp
+ * @file      Trees.hpp
  * @author    @ZouariOmar (zouariomar20@gmail.com)
- * @brief     Main trees header file
+ * @brief     Main Trees header file
  * @version   0.1
  * @date      2025-03-30
  * @copyright Copyright (c) 2025
- * @link https://github.com/ZouariOmar/Cpkg/raw/refs/heads/main/custom/C++%20home/inc/trees.hpp trees.hpp @endlink
+ * @link https://github.com/ZouariOmar/Cpkg/raw/refs/heads/main/custom/C++%20home/inc/Trees.hpp Trees.hpp @endlink
  */
 
 //? Pre-processor prototype declaration part
 #ifndef __TREES_HPP__
 #define __TREES_HPP__
 
-// ? ------------------------- INCLUDE PROTOTYPE DECLARATION PART -------------------------
+//? Include prototype declaration part
 //* Include std c++ header(s)
 #include <algorithm>
 #include <limits>
@@ -59,7 +59,8 @@ public:
   void ShowInoderedTraversalTree(Node *);
   void ShowPostOrderedTraversalTree(Node *);
   void ShowLevelOrderedTraversalTree(Node *);
-  Node *to_binarySearchTree(std::vector<int>, int, int);
+  template <typename T>
+  Node *to_binarySearchTree(T, int, int);
   bool is_binarySearchTree(Node *);
 }; // TraversalBinaryTree Class
 
