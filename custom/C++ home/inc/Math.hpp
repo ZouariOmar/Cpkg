@@ -1,11 +1,11 @@
 /**
- * @file    math.hpp
- * @author  @ZouariOmar (zouariomar20@gmail.com)
- * @brief   Main math header file
- * @version 0.1
- * @date    2025-03-29
+ * @file      Math.hpp
+ * @author    @ZouariOmar (zouariomar20@gmail.com)
+ * @brief     Main header file
+ * @version   0.1
+ * @date      2025-03-29
  * @copyright Copyright (c) 2025
- * @link https://github.com/ZouariOmar/Cpkg/raw/refs/heads/main/custom/C++%20home/inc/math.hpp math.hpp @endlink
+ * @link https://github.com/ZouariOmar/Cpkg/raw/refs/heads/main/custom/C++%20home/inc/Math.hpp Math.hpp @endlink
  */
 
 #ifndef __MATH_HPP__

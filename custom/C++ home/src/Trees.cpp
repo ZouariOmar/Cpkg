@@ -88,13 +88,13 @@ void BinaryTree::TraversalBinaryTree::ShowLevelOrderedTraversalTree(Node *root) 
 }
 
 /**
- * @fn        BinaryTree::TraversalBinaryTree::to_binarySearchTree(std::vector<int>, int, int);
- * @brief     Convert a vector to a Binary Search Tree
- * @param arr std::vector<int>
- * @tparam T  {std::vector<int>} 
- * @param l   int
- * @param h   int
- * @return    {BinaryTree::Node *}
+ * @fn         BinaryTree::TraversalBinaryTree::to_binarySearchTree(std::vector<int>, int, int);
+ * @brief      Convert a vector to a Binary Search Tree
+ * @param  arr std::vector<int>
+ * @tparam T   {std::vector<int>} 
+ * @param  l   int
+ * @param  h   int
+ * @return     {BinaryTree::Node *}
  */
 template <typename T>
 BinaryTree::Node *BinaryTree::TraversalBinaryTree::to_binarySearchTree(T arr, int l, int h) {

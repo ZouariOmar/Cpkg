@@ -1,11 +1,11 @@
 /**
- * @file      linkedList.hpp
+ * @file      LinkedList.hpp
  * @author    @ZouariOmar (zouariomar20@gmail.com)
- * @brief     linkedList main header file
+ * @brief     LinkedList header file
  * @version   0.1
  * @date      2025-03-28
  * @copyright Copyright (c) 2025
- * @link https://github.com/ZouariOmar/Cpkg/raw/refs/heads/main/custom/C++%20home/inc/linkedList.hpp linkedList.hpp @endlink
+ * @link https://github.com/ZouariOmar/Cpkg/raw/refs/heads/main/custom/C++%20home/inc/LinkedList.hpp LinkedList.hpp @endlink
  */
 
 //? Pre-processor prototype declaration part
@@ -44,12 +44,11 @@ private:
 public:
   SinglyLinkedList();
   SinglyLinkedList(int);
-  //* Custom function declaration part
   SinglyLinkedList *to_SinglyLinkedList(std::vector<int>);
   void sort(SinglyLinkedList *);
   void reverse(SinglyLinkedList **);
   void print(SinglyLinkedList *);
-}; // class SinglyLinkedList
+}; // SinglyLinkedList class
 
 class LinkedList::LinkedListBase {
 protected:
@@ -77,7 +76,7 @@ public:
   void reverse(DoublyLinkedList **);
   void print(DoublyLinkedList *);
   void reprint(DoublyLinkedList *);
-}; // class DoublyLinkedList
+}; // DoublyLinkedList class
 
 /**
  * @fn    LinkedList::CircularLinkedList
@@ -91,6 +90,6 @@ public:
   void sort(CircularLinkedList *);
   void print(CircularLinkedList *);
   void reprint(CircularLinkedList *);
-}; // Class CircularLinkedList
+}; // CircularLinkedList Class
 
 #endif // __LINKEDLIST_HPP__

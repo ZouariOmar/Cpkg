@@ -1,21 +1,17 @@
 /**
- * @file      linkList.cpp
+ * @file      LinkedList.cpp
  * @author    @ZouariOmar (zouariomar20@gmail.com)
- * @brief     Main linkedList source file
+ * @brief     LinkedList source file
  * @version   0.1
  * @date      2025-03-29
  * @copyright Copyright (c) 2025
- * @link https://github.com/ZouariOmar/Cpkg/raw/refs/heads/main/custom/C++%20home/src/linkedList.cpp linkedList.cpp @endlink
+ * @link https://github.com/ZouariOmar/Cpkg/raw/refs/heads/main/custom/C++%20home/src/LinkedList.cpp LinkedList.cpp @endlink
  */
 
 //? Include prototype declaration part
-#include "../inc/linkedList.hpp"
+#include "../inc/LinkedList.hpp"
 
 //? Function(s) prototype dev part
-
-/***************************************************
- *? ===== Singly Linked List (LinkedList::SinglyLinkedList) Dev Section =====
- ***************************************************/
 
 /**
  * @fn    LinkedList::SinglyLinkedList::SinglyLinkedList()
@@ -34,8 +30,10 @@ LinkedList::SinglyLinkedList::SinglyLinkedList(int _data)
     : data(_data), next(nullptr) {};
 
 /**
- * @brief #### Print the Singly Linked list
- * @param root
+ * @fn         LinkedList::SinglyLinkedList::print(LinkedList::SinglyLinkedList *)
+ * @brief      Print the Singly Linked list
+ * @param root {LinkedList::SinglyLinkedList *}
+ * @return     void
  */
 void LinkedList::SinglyLinkedList::print(LinkedList::SinglyLinkedList *root) {
   while (root) {
@@ -45,10 +43,10 @@ void LinkedList::SinglyLinkedList::print(LinkedList::SinglyLinkedList *root) {
 }
 
 /**
- * @brief #### Transfer the data from vector to LinkedList::SinglyLinkedList (V0)
- * @param arr
- * @param x
- * @return LinkedList::SinglyLinkedList*
+ * @fn        LinkedList::SinglyLinkedList::to_SinglyLinkedList(std::vector<int>)
+ * @brief     Transfer the data from vector to LinkedList::SinglyLinkedList
+ * @param arr std::vector<int>
+ * @return    LinkedList::SinglyLinkedList*
  */
 LinkedList::SinglyLinkedList *LinkedList::SinglyLinkedList::to_SinglyLinkedList(std::vector<int> arr) {
   size_t i{}, len{arr.size()};
@@ -66,19 +64,20 @@ LinkedList::SinglyLinkedList *LinkedList::SinglyLinkedList::to_SinglyLinkedList(
 }
 
 /**
- * @brief ### Sort the LinkedList::SinglyLinkedList in ascending order
- * *
- * - #### Using the bubble-sort
- * @param root
+ * @fn         LinkedList::SinglyLinkedList::sort(LinkedList::SinglyLinkedList *)
+ * @brief      Sort `head` in ascending order
+ * @details    This fn use bubble-sort
+ * @param head {LinkedList::SinglyLinkedList *}
+ * @return     void
  */
-void LinkedList::SinglyLinkedList::sort(LinkedList::SinglyLinkedList *root) {
-  if (!root)
+void LinkedList::SinglyLinkedList::sort(LinkedList::SinglyLinkedList *head) {
+  if (!head)
     return;
 
   bool swapped;
   do {
     swapped = false;
-    LinkedList::SinglyLinkedList *current = root;
+    LinkedList::SinglyLinkedList *current = head;
     while (current->next) {
       if (current->data > current->next->data) {
         std::swap(current->data, current->next->data);
@@ -90,8 +89,10 @@ void LinkedList::SinglyLinkedList::sort(LinkedList::SinglyLinkedList *root) {
 }
 
 /**
- * @brief ### Reverse the LinkedList::SinglyLinkedList
- * @param root
+ * @fn         LinkedList::SinglyLinkedList::reverse(LinkedList::SinglyLinkedList **)
+ * @brief      Reverse the `root`
+ * @param root {LinkedList::SinglyLinkedList **}
+ * @return     void
  */
 void LinkedList::SinglyLinkedList::reverse(LinkedList::SinglyLinkedList **root) {
   if (!(*root) || !(*root)->next)
@@ -130,7 +131,9 @@ LinkedList::LinkedListBase::LinkedListBase(int _data, LinkedListBase *_next, Lin
  */
 LinkedList::LinkedListBase::~LinkedListBase() {
   delete prev;
+  prev = nullptr;
   delete next;
+  next = nullptr;
 }
 
 /**
@@ -144,12 +147,11 @@ LinkedList::DoublyLinkedList::DoublyLinkedList(int _data, DoublyLinkedList *_nex
     : LinkedList::LinkedListBase(data, next, prev) {};
 
 /**
- * @brief #### Transfer the data from vector to LinkedList::DoublyLinkedList (V0)
- * *
- * - Push back the new data
- * @param arr
- * @param x
- * @return LinkedList::DoublyLinkedList*
+ * @fn        LinkedList::DoublyLinkedList::transform(std::vector<int>) const
+ * @brief     Transfer the data from vector to `LinkedList::DoublyLinkedList`
+ * @details   Push back the new data
+ * @param arr std::vector<int>
+ * @return    {LinkedList::DoublyLinkedList *}
  */
 LinkedList::DoublyLinkedList *LinkedList::DoublyLinkedList::transform(std::vector<int> arr) const {
   if (arr.empty())
@@ -170,10 +172,11 @@ LinkedList::DoublyLinkedList *LinkedList::DoublyLinkedList::transform(std::vecto
 }
 
 /**
- * @brief ### Print the LinkedList::DoublyLinkedList from head to tail
- * *
- * - #### Forward Mode
- * @param head
+ * @fn         LinkedList::DoublyLinkedList::print(LinkedList::DoublyLinkedList *)
+ * @brief      Print the LinkedList::DoublyLinkedList from head to tail
+ * @details    Forward Mode
+ * @param head {LinkedList::DoublyLinkedList *}
+ * @return     void
  */
 void LinkedList::DoublyLinkedList::print(LinkedList::DoublyLinkedList *head) {
   if (head) {
@@ -183,10 +186,11 @@ void LinkedList::DoublyLinkedList::print(LinkedList::DoublyLinkedList *head) {
 }
 
 /**
- * @brief ### Print the LinkedList::DoublyLinkedList from tail to head
- * *
- * - #### Reverse Mode
- * @param head
+ * @fn         LinkedList::DoublyLinkedList::reprint(LinkedList::DoublyLinkedList *)
+ * @brief      Print the LinkedList::DoublyLinkedList from tail to head
+ * @details    Reverse Mode
+ * @param head {LinkedList::DoublyLinkedList *}
+ * @return     void
  */
 void LinkedList::DoublyLinkedList::reprint(LinkedList::DoublyLinkedList *head) {
   // Move to the end of the list
@@ -201,10 +205,11 @@ void LinkedList::DoublyLinkedList::reprint(LinkedList::DoublyLinkedList *head) {
 }
 
 /**
- * @brief ### Sort the LinkedList::DoublyLinkedList in ascending order
- * *
- * - #### Using the bubble-sort
- * @param root
+ * @fn         LinkedList::DoublyLinkedList::sort(LinkedList::DoublyLinkedList *)
+ * @brief      Sort the LinkedList::DoublyLinkedList in ascending order
+ * @details    use bubble-sort
+ * @param root {LinkedList::DoublyLinkedList *}
+ * @return     void
  */
 void LinkedList::DoublyLinkedList::sort(LinkedList::DoublyLinkedList *root) {
   if (!root)
@@ -227,6 +232,13 @@ void LinkedList::DoublyLinkedList::sort(LinkedList::DoublyLinkedList *root) {
 /**
  * @brief ### Reverse the LinkedList::DoublyLinkedList
  * @param root
+ */
+
+/**
+ * @fn         LinkedList::DoublyLinkedList::reverse(LinkedList::DoublyLinkedList **)
+ * @brief      Reverse the LinkedList::DoublyLinkedList
+ * @param root {LinkedList::DoublyLinkedList **}
+ * @return     void
  */
 void LinkedList::DoublyLinkedList::reverse(LinkedList::DoublyLinkedList **root) {
   if (!(*root) || !(*root)->next)
@@ -253,12 +265,11 @@ LinkedList::CircularLinkedList::CircularLinkedList(int _data, CircularLinkedList
     : LinkedList::LinkedListBase(data, next, prev) {};
 
 /**
- * @brief #### Transfer the data from vector to LinkedList::CircularLinkedList
- * *
- * - Push back the new data
- * @param arr
- * @param x
- * @return LinkedList::DoublyLinkedList*
+ * @fn        LinkedList::CircularLinkedList::transform(std::vector<int>) const
+ * @brief     Transfer the data from vector to LinkedList::CircularLinkedList
+ * @details   Push back the new data
+ * @param arr std::vector<int>
+ * @return    {LinkedList::CircularLinkedList *}
  */
 LinkedList::CircularLinkedList *LinkedList::CircularLinkedList::transform(std::vector<int> arr) const {
   LinkedList::CircularLinkedList *root = new LinkedList::CircularLinkedList(arr[0]);
@@ -275,15 +286,15 @@ LinkedList::CircularLinkedList *LinkedList::CircularLinkedList::transform(std::v
 
   trv->next = root;
   root->prev = trv;
-
   return root;
 }
 
 /**
- * @brief ### Print the LinkedList::DoublyLinkedList from tail to head
- * *
- * - #### Reverse Mode
- * @param head
+ * @fn         LinkedList::CircularLinkedList::print(CircularLinkedList *)
+ * @brief      Print the LinkedList::DoublyLinkedList from tail to head
+ * @details    Reverse Mode
+ * @param head {CircularLinkedList *}
+ * @return     void
  */
 void LinkedList::CircularLinkedList::print(CircularLinkedList *root) {
   if (!root)
@@ -300,10 +311,11 @@ void LinkedList::CircularLinkedList::print(CircularLinkedList *root) {
 }
 
 /**
- * @brief ### Print the LinkedList::DoublyLinkedList from head to tail
- * *
- * - #### Forward Mode
- * @param head
+ * @fn         LinkedList::CircularLinkedList::reprint(LinkedList::CircularLinkedList *)
+ * @brief      Print the LinkedList::DoublyLinkedList from head to tail
+ * @details    Forward Mode
+ * @param head {LinkedList::CircularLinkedList *}
+ * @return     void
  */
 void LinkedList::CircularLinkedList::reprint(LinkedList::CircularLinkedList *root) {
   if (!root)
@@ -320,10 +332,11 @@ void LinkedList::CircularLinkedList::reprint(LinkedList::CircularLinkedList *roo
 }
 
 /**
- * @brief ### Sort the LinkedList::CircularLinkedList in ascending order
- * *
- * - #### Using the bubble-sort
- * @param root
+ * @fn         LinkedList::CircularLinkedList::sort(CircularLinkedList *)
+ * @brief      Sort the LinkedList::CircularLinkedList in ascending order
+ * @details    Use bubble-sort
+ * @param root {CircularLinkedList *}
+ * @return     void
  */
 void LinkedList::CircularLinkedList::sort(CircularLinkedList *root) {
   if (!root)

@@ -1,15 +1,15 @@
 /**
- * @file      math.cpp
+ * @file      Math.cpp
  * @author    @ZouariOmar (zouariomar20@gmail.com)
- * @brief     Main math source file
+ * @brief     Math source file
  * @version   0.1
  * @date      2025-03-29
  * @copyright Copyright (c) 2025
- * @link https://github.com/ZouariOmar/Cpkg/raw/refs/heads/main/custom/C++%20home/src/math.cpp math.cpp @endlink
+ * @link https://github.com/ZouariOmar/Cpkg/raw/refs/heads/main/custom/C++%20home/src/Math.cpp Math.cpp @endlink
  */
 
 //? Include prototype declaration part
-#include "../inc/math.hpp"
+#include "../inc/Math.hpp"
 
 //? Function(s) prototype dev part
 
