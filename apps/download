@@ -1,0 +1,87 @@
+#!/bin/bash
+# =========================================
+# .FILE
+#   download
+#
+# .SYNOPSIS
+#   download apps larger than 100MB
+#
+# .DESCRIPTION
+#   You can download:
+#     - MPLABX-v6.20-linux-downloader.tar
+#     - Proteus 8.13 SP0 Pro.zip
+#
+# .PARAMETER $app_name
+#   The application name that you want to download
+#
+# .INPUTS
+#   app_name
+#
+# .OUTPUTS
+#   app package
+#
+# .NOTES
+#   Version       : 1.0
+#   Author        : @ZouariOmar <zouariomar20@gmail.com>
+#   Created       : 07/17/2025
+#   Change Log    : Initial version
+#
+# .EXAMPLE
+#   ./download mplabx
+# =========================================
+app_name=$1
+EXIT_SUCCES=0
+EXIT_FAILED=1
+
+help() {
+  echo -e """
+    [FILE]
+      download - bash file
+    [SYNOPSIS]
+      download apps larger than 100MB
+    [DESCRIPTION]
+      You can download:
+        - MPLABX-v6.20-linux-downloader.tar -- ./download mplabx
+        - Proteus 8.13 SP0 Pro.zip          -- ./download proteus
+    [AUTHOR]
+      @ZouariOmar (zouariomar20@gmail.com)
+    [CREATED]
+      17/07/2025
+    [USAGE]
+      ./download <app_name>
+    [EXAMPLE]
+      ./download mplabx
+  """
+}
+
+if [[ $# -ne 1 ]]; then
+  help
+  exit $EXIT_FAILED
+fi
+
+download_mplabx() {
+  echo -e """
+  [LINK00] https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide#tabs
+  """
+  exit $EXIT_SUCCES
+}
+
+download_proteus() {
+  echo -e """
+  [LINK00] https://pesktop.com/en/windows/proteus_professional
+  [LINK01] https://drive.google.com/file/d/18dc8n0lpLu9QRzxbgZzciAwhg6NeqnPp/view
+  """
+  exit $EXIT_SUCCES
+}
+
+case $app_name in
+"mplabx")
+  download_mplabx
+  ;;
+"proteus")
+  download_mplabx
+  ;;
+*)
+  help
+  ;;
+esac
