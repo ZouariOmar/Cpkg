@@ -10,6 +10,7 @@
 #   You can download:
 #     - MPLABX-v6.20-linux-downloader.tar
 #     - Proteus 8.13 SP0 Pro.zip
+#     - PS2 Games (GTA, PES2014, ...)
 #
 # .PARAMETER $app_name
 #   The application name that you want to download
@@ -43,6 +44,7 @@ help() {
       You can download:
         - MPLABX-v6.20-linux-downloader.tar -- ./download mplabx
         - Proteus 8.13 SP0 Pro.zip          -- ./download proteus
+        - PS2 Games                         -- ./download ps2
     [AUTHOR]
       @ZouariOmar (zouariomar20@gmail.com)
     [CREATED]
@@ -74,12 +76,23 @@ download_proteus() {
   exit $EXIT_SUCCES
 }
 
+download_ps2_games() {
+  echo -e """
+  [LINK00] Grand Theft Auto: San Andreas  -- https://romsfun.com/download/grand-theft-auto-san-andreas-id-1-12950/4
+  [LINK01] PES 2014: Pro Evolution Soccer -- https://romsfun.com/download/pes-2014-pro-evolution-soccer-88777
+  """
+  exit $EXIT_SUCCES
+}
+
 case $app_name in
 "mplabx")
   download_mplabx
   ;;
 "proteus")
   download_mplabx
+  ;;
+"ps2")
+  download_ps2_games
   ;;
 *)
   help

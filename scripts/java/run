@@ -1,0 +1,153 @@
+#!/usr/bin/env bash
+# =========================================
+# .FILE
+#   run - Bash file
+#
+# .SYNOPSIS
+#   Java Project Automater
+#
+# .DESCRIPTION
+#   This script automates the init, build, clean, and run processes
+#   for a project using mvn/gradle. It allows users to perform
+#   operations like configuring the project, building, cleaning
+#   the build directory, and running the application.
+#
+# .PARAMETER -i | --init
+#   Initialize new java project using mvn/gradle project builder
+#
+# .INPUTS
+#   None
+#
+# .OUTPUTS
+#   None
+#
+# .NOTES
+#   Version       : 1.0
+#   Author        : @ZouariOmar <zouariomar20@gmail.com>
+#   Created       : 07/23/2025
+#   Change Log    : Initial version
+#
+# .EXAMPLE
+#   ./run --init gradle
+# =========================================
+
+# Shell Colors (Optional)
+if [ -f ~/.bash_colors ]; then
+  source ~/.bash_colors
+fi
+
+# `run.sh` variables
+EXIT_SUCCESS=0
+EXIT_FAILED=1
+COMMAND=""
+
+#* Project variables
+PROJECT_NAME="app"    # [DEFAULT] app/*
+BUILD_DIR="."         # [DEFAULT] current location
+PROJECT_BUILDER="mvn" # [DEFAULT] Maven project builder | [OPTIONS] mvn -- gradle
+GROUP_ID="com.mycompany.${PROJECT_NAME}"
+
+#* Maven variables
+MAVEN_ARCHTYPE="generate"
+# MAVEN_ARCHTYPE_VERSION="3.4" # The latest released version of the Apache Maven Archetype
+MAVEN_TEMPLATE="maven-archetype-quickstart" # [OPTIONS] junit5-jupiter-starter-archetype -- ...
+MAVEN_INTERACTIVE_MODE=false
+
+#* Gradle variables
+GRADLE_PROJECT_TYPE="java-application"
+GRADLE_TEST_FRAMEWORK="junit" # [DEFAULT] JUnit 4 | [OPTIONS] TestNG -- JUnit 4 -- Spock -- JUnit Jupiter
+GRADLE_DSL="groovy"           # [DEFAULT] Groovy  | [OPTIONS] groovy -- kotlin
+
+#* Parse options using a while loop
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+  --init | -i)
+    COMMAND="init"
+    shift
+    ;;
+  gradle)
+    PROJECT_BUILDER="gradle"
+    shift
+    ;;
+  -h | --help)
+    COMMAND="help"
+    shift
+    ;;
+  *)
+    echo -e "${RED}Error:${NC} Invalid option: $1"
+    exit ${EXIT_FAILED}
+    ;;
+  esac
+done
+
+#* Check if command is provided
+if [ -z "$COMMAND" ]; then
+  echo -e "${RED}Error:${NC} Command is required!"
+  echo -e "${BLUE}Usage:${NC} ./run.sh <build|run|clean|setup|-h,--help> [-t,--test|-a,--all|-r,--root]"
+  exit ${EXIT_FAILED}
+fi
+
+help() {
+  echo -e "${YELLOW}[FILE]${RESET}
+  run - Bash file
+${YELLOW}[LINK]${RESET}
+  https://github.com/ZouariOmar
+${YELLOW}[BRIEF]${RESET}
+  Project Automater
+${YELLOW}[USAGE]${RESET}
+  ./run <MainCmd> [Option]
+${YELLOW}[OPTIONS]${RESET}
+  --init | -i [PROJECT_BUILDER]  -- Initialize new java project using mvn/gradle project builder
+  --help | -h                    -- Display this help message
+${YELLOW}[VERSION]${RESET}
+  1.0
+${YELLOW}[AUTHOR]${RESET}
+  @ZouariOmar <zouariomar20@gmail.com>
+${YELLOW}[CREATED]${RESET}
+  07/23/2025
+${YELLOW}[CHANGELOG]${RESET}
+  Initial version"
+  exit ${EXIT_SUCCESS}
+}
+
+init() {
+  echo -e "${BLUE}[INFO]${RESET} Generate '${PROJECT_NAME}' java project with '${PROJECT_BUILDER}'"
+  if [ ${PROJECT_BUILDER} = "mvn" ]; then
+    mvn archetype:${MAVEN_ARCHTYPE} \
+      -DgroupId=${GROUP_ID} \
+      -DartifactId=${PROJECT_NAME} \
+      -DarchetypeArtifactId=${MAVEN_TEMPLATE} \
+      -DinteractiveMode=${MAVEN_INTERACTIVE_MODE}
+    # -DarchetypeVersion=${MAVEN_ARCHTYPE_VERSION}
+  elif [ ${PROJECT_BUILDER} = "gradle" ]; then
+    gradle init \
+      --type ${GRADLE_PROJECT_TYPE} \
+      --project-name "${PROJECT_NAME}" \
+      --dsl ${GRADLE_DSL} \
+      --package "${GROUP_ID}" \
+      --test-framework ${GRADLE_TEST_FRAMEWORK}
+  fi
+
+  # shellcheck disable=SC2181
+  if [ $? -ne 0 ]; then
+    echo -e "${RED}[ERROR]${RESET} Installation failed. Please check the logs or output above for details."
+    exit ${EXIT_FAILED}
+  fi
+  echo -e "${GREEN}[SUCCESS]${RESET} Happy Coding :)"
+  exit ${EXIT_SUCCESS}
+
+}
+
+#* Process commands
+case "$COMMAND" in
+init)
+  init
+  ;;
+help)
+  help
+  ;;
+*)
+  echo -e "${RED}Error:${NC} Unknown command '$COMMAND'!"
+  echo -e "${BLUE}Usage:${NC} ./run.sh <build|run|clean|setup|-h,--help> [-t,--test|-a,--all|-r,--root]"
+  ;;
+esac
