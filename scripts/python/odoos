@@ -1,0 +1,110 @@
+#!/usr/bin/bash
+# =========================================
+# .FILE
+#   odoos
+#
+# .SYNOPSIS
+#   Overview of script
+#
+# .DESCRIPTION
+#   Odoo bash file that let you setup the envirement, create new modules...and more :)
+#
+# .PARAMETERS $cmd
+#   User $1 arg handler
+#
+# .PARAMETERS $odoo_bin_file
+#   Path to odoo bash file
+#
+# .PARAMETERS $odoo_conf_file
+#   Path to odoo configuration file
+#
+# .PARAMETERS $odoo_db
+#   Odoo postgres database name
+#
+# .INPUTS
+#   See ./odoos [-h|--help]
+#
+# .OUTPUTS
+#   See ./odoos [-h|--help]
+#
+# .NOTES
+#   Version       : 1.0
+#   Author        : @ZouariOmar <zouariomar20@gmail.com>
+#   Created       : 05/07/2025
+#   Change Log    : None
+#
+# .EXAMPLE
+#   ./script.sh --make_module hello_world odoo/cutom_addons
+# =========================================
+
+# Load custom colors
+if [ -f ~/.bash_colors ]; then
+  source ~/.bash_colors
+fi
+
+# Define public vars
+EXIT_FAILED=1
+EXIT_SUCCESS=0
+cmd=$1
+odoo_bin_file="odoo/odoo-bin"
+odoo_conf_file="conf/odoo.conf"
+odoo_db="odoo"
+
+help() {
+  echo -e """
+  ${YELLOW}[FILE]${RESET}
+    odoos
+  ${YELLOW}[LINK]${RESET}
+    https://github.com/ZouariOmar
+  ${YELLOW}[BRIEF]${RESET}
+    Odoo bash file that let you setup the envirement, create new modules...and more :)
+  ${YELLOW}[TO-SETUP]${RESET}
+    ${BLUE}[INFO] Create a new python vertual envirement${RESET}
+      ${BOLD_BLUE}home/${USER}/.pyenv/versions/3.11.13/bin/python -m venv .venv${RESET}
+    ${BLUE}[INFO] Set the python vertual envirement as default python session${RESET}
+      ${BOLD_BLUE}source .venv/bin/activate${RESET}
+  ${YELLOW}[OPTIONS]${RESET}
+    --make_module <module_name> <module_path> -- Create an empty module
+    --run                                     -- Start odoo local server
+    --help | -h                               -- :)
+  """
+}
+
+run() {
+  "./$odoo_bin_file" -c "$odoo_conf_file" -d "$odoo_db"
+}
+
+invalid_option_msg() {
+  echo -e """
+${RED}[ERROR] Invalid odoos option!
+${YELLOW}[INFO] Tape './odoos <-h|--help>' to see the options.${RESET}
+"""
+}
+
+make_module() {
+  if [ "$#" -ne 2 ]; then
+    help
+    exit $EXIT_FAILED
+  fi
+  module_name=$1
+  module_path=$2
+  #? odoo-bin scaffold <module name> <where to put it>
+  "./$odoo_bin_file" scaffold "$module_name" "$module_path" || help
+}
+
+case $cmd in
+"--make_module")
+  make_module "$2" "$3"
+  exit $EXIT_SUCCESS
+  ;;
+"--run")
+  run
+  exit $EXIT_SUCCESS
+  ;;
+"--help" | "-h")
+  help
+  ;;
+*)
+  invalid_option_msg
+  ;;
+esac
