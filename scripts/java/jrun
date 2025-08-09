@@ -1,0 +1,263 @@
+#!/usr/bin/env bash
+# =========================================
+# .FILE
+#   jrun - Bash file
+#
+# .SYNOPSIS
+#   Java Project Automater
+#
+# .DESCRIPTION
+#   This script automates the init, build, clean, and run processes
+#   for a project using mvn/gradle. It allows users to perform
+#   operations like configuring the project, building, cleaning
+#   the build directory, and running the application.
+#
+# .PARAMETER --init
+#   Initialize new java project using mvn/gradle project builder
+#
+# .PARAMETER --compile
+#   Compile the project
+#
+# .PARAMETER --clean
+#   Clean the builded project files/dirs
+#
+# .PARAMETER --install | -i
+#   Compiles the project, runs tests, and packages the code into its final deliverable
+#
+# .PARAMETER --package | -p
+#   Packages the compiled code into a distributable format, such as a JAR
+#
+# .PARAMETER --run | -r
+#   Run project main goal - Goal Format: <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>
+#
+# .PARAMETER --custom | -c
+#   Run custom command
+#
+# .INPUTS
+#   None
+#
+# .OUTPUTS
+#   None
+#
+# .NOTES
+#   Version       : 1.0.0
+#   Author        : @ZouariOmar <zouariomar20@gmail.com>
+#   Created       : 07/23/2025
+#   Change Log    : Initial version
+#   License       : GPL3.0
+#   Link          : https://raw.githubusercontent.com/ZouariOmar/Cpkg/refs/heads/main/scripts/java/jrun
+#
+# .EXAMPLE
+#   ./jrun --init
+#
+# shellcheck disable=SC1090
+# =========================================
+
+##############################################
+####### JRUN - Generale Project Setup ########
+##############################################
+
+# Project variables
+PROJECT_NAME="hirelog"                            # [DEFAULT] app | [RECOMMEND] Write it lowerCase
+PROJECT_COMPANY="mycompany"                       # [DEFAULT] mycompany
+PROJECT_DIR="project"                             # [DEFAULT] Current location | [RECOMMEND] We recommend to put the absulute build directory (where the super pom.xml)
+PROJECT_BUILDER="mvn"                             # [DEFAULT] Maven project builder | [OPTIONS] mvn -- gradle
+PROJECT_VERSION="1.0.0"                           # [DEFAULT] 1.0.0
+GROUP_ID="com.${PROJECT_COMPANY}.${PROJECT_NAME}" # [DEFAULT] com.mycompany.app
+
+##############################################
+######### JRUN - Maven Project Setup #########
+##############################################
+
+# Maven variables
+MAVEN_ARCHTYPE="generate"
+MAVEN_ARCHTYPE_GROUP_ID="org.apache.maven.archetypes"
+MAVEN_TEMPLATE="maven-archetype-quickstart" # [OPTIONS] junit5-jupiter-starter-archetype -- ...
+MAVEN_ARCHTYPE_VERSION="1.5"                # The version of the Apache Maven Archetype
+MAVEN_INTERACTIVE_MODE=false
+MAVEN_JAVAFX_VERSION=24.0.2 # Enable it if you have javaFX project
+MAVEN_MAIN_GOAL="javafx:run"
+
+##############################################
+######### JRUN - Gradle Project Setup ########
+##############################################
+
+# Gradle variables
+# GRADLE_PROJECT_TYPE="java-application"
+# GRADLE_TEST_FRAMEWORK="junit" # [DEFAULT] JUnit 4 | [OPTIONS] TestNG -- JUnit 4 -- Spock -- JUnit Jupiter
+# GRADLE_DSL="groovy"           # [DEFAULT] Groovy  | [OPTIONS] groovy -- kotlin
+
+####################################################################################
+######### DON'T TOUCH THIS PART - ONLY IF YOU KNOW WHAT YOU ARE DOING :) - #########
+####################################################################################
+
+# Shell Colors (Optional)
+if [ -f ~/.bash_colors ]; then
+  source ~/.bash_colors
+fi
+
+# `run.sh` variables
+CURRENT_DATE=$(date)
+EXIT_SUCCESS=0
+EXIT_FAILED=1
+COMMAND=""
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+  --init)
+    COMMAND="init"
+    shift
+    ;;
+  --compile)
+    COMMAND="compile"
+    shift
+    ;;
+  --clean)
+    COMMAND="clean"
+    shift
+    ;;
+  --install | -i)
+    COMMAND="install"
+    shift
+    ;;
+  --package | -p)
+    COMMAND="package"
+    shift
+    ;;
+  --run | -r)
+    COMMAND="run"
+    shift
+    ;;
+  --custom | -c)
+    COMMAND="custom"
+    shift
+    break
+    ;;
+  -h | --help)
+    COMMAND="help"
+    shift
+    ;;
+  *)
+    echo -e "${RED}[ERROR]${RESET} Unknown command '$*'!
+${BLUE}[INFO]${RESET} Run ./jrun [--help|-h] for more information :)"
+    exit ${EXIT_FAILED}
+    ;;
+  esac
+done
+
+if [ -z "$COMMAND" ]; then
+  echo -e "${RED}[ERROR]${RESET} Command is required!
+${BLUE}[INFO]${RESET} Run ./jrun [--help|-h] for more information :)"
+  exit ${EXIT_FAILED}
+fi
+
+help() {
+  echo -e "${YELLOW}[FILE]${RESET}
+  jrun - Bash file
+${YELLOW}[LINK]${RESET}
+  https://raw.githubusercontent.com/ZouariOmar/Cpkg/refs/heads/main/scripts/java/jrun
+${YELLOW}[BRIEF]${RESET}
+  Project Automater
+${YELLOW}[USAGE]${RESET}
+  ./run <MainCmd> [Option]
+${YELLOW}[OPTIONS]${RESET}
+  Option          Support      Description
+  ---------------------------------------------------------------------------------------------------------------
+  --init          [mvn|gradle] Initialize new java project using mvn/gradle project builder
+  --compile       [mvn]        Compile the project
+  --clean         [mvn]        Clean the builded project files/dirs (target/)
+  --package | -p  [mvn]        Packages the compiled code into a distributable format, such as a JAR
+  --install | -i  [mvn]        Compiles the project, runs tests, and packages the code into its final deliverable
+  --run     | -r  [mvn]        Run project main goal - Goal Format: <plugin-prefix>:<goal>
+  --custom  | -c  [mvn]        Run custom command
+  --help    | -h  [None]       Display this help message
+${YELLOW}[VERSION]${RESET}
+  1.0.0
+${YELLOW}[AUTHOR]${RESET}
+  @ZouariOmar <zouariomar20@gmail.com>
+${YELLOW}[CREATED]${RESET}
+  07/23/2025
+${YELLOW}[CHANGELOG]${RESET}
+  Initial version
+${YELLOW}[LICENSE]${RESET}
+  GPL3.0"
+  exit ${EXIT_SUCCESS}
+}
+
+init() {
+  echo -e "${BLUE}[INFO]${RESET} Generate '${BOLD_BLUE}${PROJECT_NAME}${RESET}' java project [BUILDER] '${BOLD_BLUE}${PROJECT_BUILDER}${RESET}' [DATE] '${BOLD_BLUE}${CURRENT_DATE}${RESET}'"
+  if [ ${PROJECT_BUILDER} = "mvn" ]; then
+    mvn archetype:${MAVEN_ARCHTYPE} \
+      -DgroupId=${GROUP_ID} \
+      -DartifactId=${PROJECT_NAME} \
+      -DarchetypeGroupId=${MAVEN_ARCHTYPE_GROUP_ID} \
+      -DarchetypeArtifactId=${MAVEN_TEMPLATE} \
+      -DarchetypeVersion=${MAVEN_ARCHTYPE_VERSION} \
+      -DinteractiveMode=${MAVEN_INTERACTIVE_MODE} \
+      -DoutputDirectory=${PROJECT_DIR} \
+      -Dversion=${PROJECT_VERSION} \
+      -Djavafx-version="${MAVEN_JAVAFX_VERSION}"
+  elif [ ${PROJECT_BUILDER} = "gradle" ]; then
+    cd ${PROJECT_DIR} &&
+      gradle init \
+        --type "${GRADLE_PROJECT_TYPE}" \
+        --project-name "${PROJECT_NAME}" \
+        --dsl "${GRADLE_DSL}" \
+        --package "${GROUP_ID}" \
+        --test-framework "${GRADLE_TEST_FRAMEWORK}"
+  else
+    echo -e "${RED}[ERROR]${RESET} Installation failed. Please check the logs or output above for details."
+    exit ${EXIT_FAILED}
+  fi
+
+  echo -e "${GREEN}[SUCCESS]${RESET} Happy Coding :)"
+  exit ${EXIT_SUCCESS}
+}
+
+customMaven() {
+  echo -e "${BLUE}[INFO]${RESET} [CMD] '${BOLD_BLUE}mvn -f ${PROJECT_DIR} $*${RESET}' [PROJECT] '${BOLD_BLUE}${PROJECT_NAME}${RESET}' [BUILDER] '${BOLD_BLUE}${PROJECT_BUILDER}${RESET}' [DATE] '${BOLD_BLUE}${CURRENT_DATE}${RESET}'"
+  if [ ${PROJECT_BUILDER} = "mvn" ]; then
+    mvn -f ${PROJECT_DIR} "$@"
+  elif [ ${PROJECT_BUILDER} = "gradle" ]; then
+    echo -e "${YELLOW}[WARRNING]${RESET} This option not support it yet for '${PROJECT_BUILDER}' :("
+  else
+    echo -e "${RED}[ERROR]${RESET} Custom CMD failed. Please check the logs or output above for details."
+    exit ${EXIT_FAILED}
+  fi
+
+  echo -e "${GREEN}[SUCCESS]${RESET} Successfully run it!"
+  exit ${EXIT_SUCCESS}
+}
+
+# Process `COMMAND`
+case "$COMMAND" in
+init)
+  init
+  ;;
+compile)
+  customMaven compile
+  ;;
+clean)
+  customMaven clean
+  ;;
+install)
+  customMaven install
+  ;;
+package)
+  customMaven package
+  ;;
+run)
+  customMaven ${MAVEN_MAIN_GOAL}
+  ;;
+custom)
+  customMaven "$@"
+  ;;
+help)
+  help
+  ;;
+*)
+  echo -e "${RED}[ERROR]${RESET} Unknown command '$COMMAND'!
+${BLUE}[INFO]${RESET} Run ./jrun [--help|-h] for more information :)"
+  exit ${EXIT_FAILED}
+  ;;
+esac
