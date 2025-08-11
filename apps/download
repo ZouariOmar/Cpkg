@@ -11,6 +11,7 @@
 #     - MPLABX-v6.20-linux-downloader.tar
 #     - Proteus 8.13 SP0 Pro.zip
 #     - PS2 Games (GTA, PES2014, ...)
+#     - PCSX2 (ps2 emulator)
 #
 # .PARAMETER $app_name
 #   The application name that you want to download
@@ -45,6 +46,7 @@ help() {
         - MPLABX-v6.20-linux-downloader.tar -- ./download mplabx
         - Proteus 8.13 SP0 Pro.zip          -- ./download proteus
         - PS2 Games                         -- ./download ps2
+        - PCSX2-v2.4.0                      -- ./download pcsx2
     [AUTHOR]
       @ZouariOmar (zouariomar20@gmail.com)
     [CREATED]
@@ -84,6 +86,10 @@ download_ps2_games() {
   exit $EXIT_SUCCES
 }
 
+download_pcsx2() {
+  wget https://github.com/PCSX2/pcsx2/releases/download/v2.4.0/pcsx2-v2.4.0-linux-appimage-x64-Qt.AppImage
+}
+
 case $app_name in
 "mplabx")
   download_mplabx
@@ -93,6 +99,9 @@ case $app_name in
   ;;
 "ps2")
   download_ps2_games
+  ;;
+"pcsx2")
+  download_pcsx2
   ;;
 *)
   help
